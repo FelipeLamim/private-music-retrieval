@@ -1,0 +1,16 @@
+# Cache do Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Ambientes virtuais e configurações locais
+.venv/
+venv/
+.env
+
+# Blocos recuperados: podem ser gerados novamente
+results/**/*.bin
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
