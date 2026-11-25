@@ -1,0 +1,54 @@
+{
+ "run_id": "20261121T195839Z_e2_ablation",
+ "plan_file": "experiments/plans/e2_ablation.json",
+ "argv": [
+  "src/pmr/experiments/runner.py",
+  "--plan",
+  "experiments/plans/e2_ablation.json",
+  "--out",
+  "results/experiments",
+  "--run-id",
+  "20261121T195839Z_e2_ablation"
+ ],
+ "code_sha256": "86c45aee3a9c7e92788faf564ccbdca905aa797645e6d085007106fc6e46b1dd",
+ "system": {
+  "collected_utc": "2026-11-21T19:58:39Z",
+  "cpu_model": "AMD EPYC 9R14",
+  "logical_cpus": 16,
+  "mem_total_kib": 32144472,
+  "os": "Amazon Linux 2",
+  "kernel": "5.10.273-289.1133.amzn2int.x86_64",
+  "machine": "x86_64",
+  "libc": "glibc-2.26",
+  "python": "3.10.22",
+  "python_impl": "CPython",
+  "packages": {
+   "tenseal": "0.3.14",
+   "numpy": "1.26.4",
+   "scipy": "1.13.1",
+   "psutil": "6.1.1",
+   "matplotlib": "3.9.4"
+  },
+  "seal": "Microsoft SEAL 4.1.1 (bundled in TenSEAL 0.3.14, per TenSEAL cmake/seal.cmake)",
+  "loadavg_at_start": [
+   1.94,
+   1.26,
+   0.75
+  ],
+  "env_threads": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "note": "Virtualized shared machine; CPU frequency scaling and co-tenant load are not controlled."
+ },
+ "started_utc": "2026-11-21T19:58:39Z",
+ "finished_utc": "2026-11-21T20:01:41Z",
+ "system_at_end": {
+  "loadavg": [
+   2.25,
+   1.7,
+   1.01
+  ]
+ }
+}

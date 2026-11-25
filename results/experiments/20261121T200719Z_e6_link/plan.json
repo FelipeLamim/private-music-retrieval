@@ -1,0 +1,92 @@
+{
+ "name": "e6_link",
+ "description": "E6: EMULATED bandwidth-limited downlink (server-side application-level pacing on loopback, not a real network) on the mini catalog (12-20 s tracks); progressive-playback startup and stalls.",
+ "defaults": {
+  "catalog": {
+   "dir": "data/catalog/mini"
+  },
+  "tracks": [
+   2,
+   9
+  ],
+  "warmup": 1,
+  "trials": 2,
+  "client": {
+   "batch": 4,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  }
+ },
+ "experiments": [
+  {
+   "name": "opt_u16_5mbps",
+   "server": {
+    "packing": "u16",
+    "rate_limit_mbps": 5
+   }
+  },
+  {
+   "name": "did_u8_5mbps",
+   "server": {
+    "backend": "didactic",
+    "packing": "u8",
+    "rate_limit_mbps": 5
+   }
+  },
+  {
+   "name": "conv_track_5mbps",
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "rate_limit_mbps": 5
+   }
+  },
+  {
+   "name": "opt_u16_10mbps",
+   "server": {
+    "packing": "u16",
+    "rate_limit_mbps": 10
+   }
+  },
+  {
+   "name": "did_u8_10mbps",
+   "server": {
+    "backend": "didactic",
+    "packing": "u8",
+    "rate_limit_mbps": 10
+   }
+  },
+  {
+   "name": "conv_track_10mbps",
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "rate_limit_mbps": 10
+   }
+  },
+  {
+   "name": "opt_u16_25mbps",
+   "server": {
+    "packing": "u16",
+    "rate_limit_mbps": 25
+   }
+  },
+  {
+   "name": "did_u8_25mbps",
+   "server": {
+    "backend": "didactic",
+    "packing": "u8",
+    "rate_limit_mbps": 25
+   }
+  },
+  {
+   "name": "conv_track_25mbps",
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "rate_limit_mbps": 25
+   }
+  }
+ ]
+}

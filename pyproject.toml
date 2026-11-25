@@ -1,0 +1,15 @@
+[project]
+name = "pmr"
+version = "0.1.0"
+description = "Private music retrieval: single-server PIR with BFV homomorphic encryption (UNICAMP TCC prototype)"
+requires-python = ">=3.10,<3.11"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "slow: long-running tests (full-length tracks)",
+    "integration: multi-process loopback tests",
+]

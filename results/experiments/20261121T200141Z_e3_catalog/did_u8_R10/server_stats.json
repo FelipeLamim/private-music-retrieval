@@ -1,0 +1,139 @@
+{
+ "experiment": {
+  "catalog": {
+   "generate": {
+    "name": "n160_d30",
+    "profile": "full",
+    "n_tracks": 160,
+    "duration_s": 30
+   }
+  },
+  "warmup": 1,
+  "trials": 3,
+  "client": {
+   "batch": 8,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  },
+  "name": "did_u8_R10",
+  "tracks": [
+   0,
+   9
+  ],
+  "server": {
+   "backend": "didactic",
+   "packing": "u8",
+   "max_tracks": 10
+  }
+ },
+ "catalog_dir": "data/catalog/generated/n160_d30",
+ "server_ready": {
+  "protocol": "pmr-pir/1",
+  "backend": {
+   "backend": "didactic",
+   "packing": "u8",
+   "query_mode": "selector",
+   "db_form": "raw",
+   "mod_switch": false,
+   "seeded": false,
+   "slots": 4096,
+   "params": {
+    "scheme": "BFV",
+    "poly_modulus_degree": 4096,
+    "plain_modulus": 65537,
+    "coeff_modulus": [
+     68719403009,
+     68719230977,
+     137438822401
+    ],
+    "coeff_modulus_bits": [
+     36,
+     36,
+     37
+    ],
+    "security_level": "tc128",
+    "library": "Microsoft SEAL 4.1.1 via TenSEAL 0.3.14 (tenseal.sealapi)"
+   },
+   "label": "didactic-u8"
+  },
+  "layout": {
+   "num_records": 10,
+   "num_blocks": 235,
+   "block_bytes": 4096,
+   "packing": "u8",
+   "slots": 4096,
+   "record_lengths": [
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000
+   ]
+  },
+  "limits": {
+   "max_blocks_per_request": 64,
+   "max_queries_per_session": 4,
+   "max_ciphertext_bytes": 524288
+  },
+  "server": {
+   "workers": 1,
+   "setup_s": 0.7034,
+   "preprocess_s": 0.6807,
+   "catalog_load_s": 0.0187
+  },
+  "listen": {
+   "host": "127.0.0.1",
+   "port": 36955,
+   "pid": 8348
+  }
+ },
+ "server_ready_wall_s": 1.165294258040376,
+ "client_wall_s": 16.712112418026663,
+ "client_returncode": 0,
+ "server_proc_before": {
+  "proc": {
+   "VmHWM": 177748,
+   "VmRSS": 168512,
+   "utime_s": 0.91,
+   "stime_s": 0.17,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_proc_after": {
+  "proc": {
+   "VmHWM": 186780,
+   "VmRSS": 183756,
+   "utime_s": 16.9,
+   "stime_s": 0.35,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_app_stats": {
+  "pid": 8348,
+  "sessions": 0,
+  "counters": {
+   "requests": 225,
+   "bytes_in": 6332885,
+   "bytes_out": 145655331,
+   "blocks_answered": 1645,
+   "errors": 0
+  },
+  "workers": [
+   {
+    "pid": 8348,
+    "peak_rss_kib": 186780,
+    "cpu_s": 17.265982258,
+    "db_bytes_est": 269516800
+   }
+  ],
+  "main_cpu_s": 17.265992568
+ }
+}

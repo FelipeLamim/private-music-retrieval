@@ -1,0 +1,154 @@
+{
+  "sha": "cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+  "node_id": "C_kwDOCAZUbtoAKGNmNTVmMTBiZTdiZmZiYTRlNzhkNWJhMzI3NjQyODRhYzgyOGQ2Y2Q",
+  "commit": {
+    "author": {
+      "name": "Kim Laine",
+      "email": "kim.laine@microsoft.com",
+      "date": "2024-11-19T19:56:55Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2024-11-19T19:56:55Z"
+    },
+    "message": "Merge pull request #23 from sga001/master\n\noptimize random num generation for tests and test program",
+    "tree": {
+      "sha": "82566f7711062f69805f312083c7d693b0d8ec60",
+      "url": "https://api.github.com/repos/microsoft/SealPIR/git/trees/82566f7711062f69805f312083c7d693b0d8ec60"
+    },
+    "url": "https://api.github.com/repos/microsoft/SealPIR/git/commits/cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJnPO2HCRC1aQ7uu5UhlAAArU4QAJ2T1mWU71TYFucvbeTELRMl\nmC8k+Ch/UVhLi9F6Ut1FwIfS92hx4sjNNT45nFhGt/50+s527gj4r3/tM0+SkD0h\nG1DnTDz2OhDnzMPXLgyaTezfDXbjTGN8iqgHD4lDv8TYUMtj0IDuGdo/Hpw+U/kA\n589nKHdYqfBXIAsPG7IzzK3CcuDTUVqmYO114/YFXO+6w8rP9Ip5PonoJtMDpBYX\nWeIcp4pMfc4kPNZzxDGxANkiacybr9nSmt7wz6v+fkgJpN27VTgzmL9MZo15Ag4G\nV1AOeFWEgBeB5GhpLErwHowhhU1RAdBq+aT+sPgzUGcahZPmsnOq069XH8t824e/\n8vqTYbTK3nKWc1LNgEDITyYz7BtXuEG9rMW+NG/n2T8wOiqIyBQThrDJFd4ZTcML\nsaL/o1wxgEMnDwH9xzJ9aMzFIbMEyyx80PGrizF5Q6HbMZ3sU5FIWxeekiMBNAtZ\nlnXYzLsUb8pjJXAdpPV81DjwqRd1ojSgHtAWAtugVv0wWea9O+M7noUflBsu1KWA\nyKogO96gw8pUTT2kfrzvwaFLnu6D7SvRmpO/Z43t09GhexW3njAn1gUggpJDF6ze\nV5LuQhdRFatnpBJqXwJ8Npa6NQU+TCizU9qDj0CXUrQ282Rpvv5Z40oF1uno5iQu\n6BTDYTd4pREWcBisu0ZY\n=aH0o\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 82566f7711062f69805f312083c7d693b0d8ec60\nparent ee1a5a3922fc9250f9bb4e2416ff5d02bfef7e52\nparent 9b9939c402c7978be00d97f07b042ca31b88197d\nauthor Kim Laine <kim.laine@microsoft.com> 1732046215 -0800\ncommitter GitHub <noreply@github.com> 1732046215 -0800\n\nMerge pull request #23 from sga001/master\n\noptimize random num generation for tests and test program",
+      "verified_at": "2024-11-19T19:56:57Z"
+    }
+  },
+  "url": "https://api.github.com/repos/microsoft/SealPIR/commits/cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+  "html_url": "https://github.com/microsoft/SealPIR/commit/cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+  "comments_url": "https://api.github.com/repos/microsoft/SealPIR/commits/cf55f10be7bffba4e78d5ba32764284ac828d6cd/comments",
+  "author": {
+    "login": "kimlaine",
+    "id": 20521604,
+    "node_id": "MDQ6VXNlcjIwNTIxNjA0",
+    "avatar_url": "https://avatars.githubusercontent.com/u/20521604?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/kimlaine",
+    "html_url": "https://github.com/kimlaine",
+    "followers_url": "https://api.github.com/users/kimlaine/followers",
+    "following_url": "https://api.github.com/users/kimlaine/following{/other_user}",
+    "gists_url": "https://api.github.com/users/kimlaine/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/kimlaine/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/kimlaine/subscriptions",
+    "organizations_url": "https://api.github.com/users/kimlaine/orgs",
+    "repos_url": "https://api.github.com/users/kimlaine/repos",
+    "events_url": "https://api.github.com/users/kimlaine/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/kimlaine/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "ee1a5a3922fc9250f9bb4e2416ff5d02bfef7e52",
+      "url": "https://api.github.com/repos/microsoft/SealPIR/commits/ee1a5a3922fc9250f9bb4e2416ff5d02bfef7e52",
+      "html_url": "https://github.com/microsoft/SealPIR/commit/ee1a5a3922fc9250f9bb4e2416ff5d02bfef7e52"
+    },
+    {
+      "sha": "9b9939c402c7978be00d97f07b042ca31b88197d",
+      "url": "https://api.github.com/repos/microsoft/SealPIR/commits/9b9939c402c7978be00d97f07b042ca31b88197d",
+      "html_url": "https://github.com/microsoft/SealPIR/commit/9b9939c402c7978be00d97f07b042ca31b88197d"
+    }
+  ],
+  "stats": {
+    "total": 30,
+    "additions": 21,
+    "deletions": 9
+  },
+  "files": [
+    {
+      "sha": "dfd24eeb07f83dead257d96acccffd1a69f6f05a",
+      "filename": "src/main.cpp",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 2,
+      "changes": 6,
+      "blob_url": "https://github.com/microsoft/SealPIR/blob/cf55f10be7bffba4e78d5ba32764284ac828d6cd/src%2Fmain.cpp",
+      "raw_url": "https://github.com/microsoft/SealPIR/raw/cf55f10be7bffba4e78d5ba32764284ac828d6cd/src%2Fmain.cpp",
+      "contents_url": "https://api.github.com/repos/microsoft/SealPIR/contents/src%2Fmain.cpp?ref=cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+      "patch": "@@ -73,10 +73,11 @@ int main(int argc, char *argv[]) {\n   // the correct element.\n   auto db_copy(make_unique<uint8_t[]>(number_of_items * size_per_item));\n \n-  random_device rd;\n+  seal::Blake2xbPRNGFactory factory;\n+  auto gen =  factory.create();\n   for (uint64_t i = 0; i < number_of_items; i++) {\n     for (uint64_t j = 0; j < size_per_item; j++) {\n-      uint8_t val = rd() % 256;\n+      uint8_t val = gen->generate() % 256;\n       db.get()[(i * size_per_item) + j] = val;\n       db_copy.get()[(i * size_per_item) + j] = val;\n     }\n@@ -92,6 +93,7 @@ int main(int argc, char *argv[]) {\n   cout << \"Main: database pre processed \" << endl;\n \n   // Choose an index of an element in the DB\n+  random_device rd;\n   uint64_t ele_index =\n       rd() % number_of_items; // element in DB at random position\n   uint64_t index = client.get_fv_index(ele_index);   // index of FV plaintext"
+    },
+    {
+      "sha": "3b33673d704a8eb8bbaba52446570f3bf6b2b087",
+      "filename": "src/pir_server.cpp",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/microsoft/SealPIR/blob/cf55f10be7bffba4e78d5ba32764284ac828d6cd/src%2Fpir_server.cpp",
+      "raw_url": "https://github.com/microsoft/SealPIR/raw/cf55f10be7bffba4e78d5ba32764284ac828d6cd/src%2Fpir_server.cpp",
+      "contents_url": "https://api.github.com/repos/microsoft/SealPIR/contents/src%2Fpir_server.cpp?ref=cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+      "patch": "@@ -121,7 +121,7 @@ void PIRServer::set_database(const std::unique_ptr<const uint8_t[]> &bytes,\n   cout << \"adding: \" << matrix_plaintexts - current_plaintexts\n        << \" FV plaintexts of padding (equivalent to: \"\n        << (matrix_plaintexts - current_plaintexts) *\n-              elements_per_ptxt(logtp, N, ele_size)\n+              elements_per_ptxt(logt, N, ele_size)\n        << \" elements)\" << endl;\n #endif\n "
+    },
+    {
+      "sha": "d34389d74329a36e5cd9adcb11c45b09547d53ee",
+      "filename": "test/query_test.cpp",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 2,
+      "changes": 7,
+      "blob_url": "https://github.com/microsoft/SealPIR/blob/cf55f10be7bffba4e78d5ba32764284ac828d6cd/test%2Fquery_test.cpp",
+      "raw_url": "https://github.com/microsoft/SealPIR/raw/cf55f10be7bffba4e78d5ba32764284ac828d6cd/test%2Fquery_test.cpp",
+      "contents_url": "https://api.github.com/repos/microsoft/SealPIR/contents/test%2Fquery_test.cpp?ref=cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+      "patch": "@@ -70,10 +70,12 @@ int query_test(uint64_t num_items, uint64_t item_size, uint32_t degree,\n   // the correct element.\n   auto db_copy(make_unique<uint8_t[]>(number_of_items * size_per_item));\n \n-  random_device rd;\n+  seal::Blake2xbPRNGFactory factory;\n+  auto gen = factory.create();\n+\n   for (uint64_t i = 0; i < number_of_items; i++) {\n     for (uint64_t j = 0; j < size_per_item; j++) {\n-      uint8_t val = rd() % 256;\n+      uint8_t val = gen->generate() % 256;\n       db.get()[(i * size_per_item) + j] = val;\n       db_copy.get()[(i * size_per_item) + j] = val;\n     }\n@@ -100,6 +102,7 @@ int query_test(uint64_t num_items, uint64_t item_size, uint32_t degree,\n   auto time_pre_us =\n       duration_cast<microseconds>(time_pre_e - time_pre_s).count();\n \n+  random_device rd;\n   // Choose an index of an element in the DB\n   uint64_t ele_index =\n       rd() % number_of_items; // element in DB at random position"
+    },
+    {
+      "sha": "5ccb5965e2bad0580fea0d88798fd1c687d98627",
+      "filename": "test/replace_test.cpp",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 2,
+      "changes": 8,
+      "blob_url": "https://github.com/microsoft/SealPIR/blob/cf55f10be7bffba4e78d5ba32764284ac828d6cd/test%2Freplace_test.cpp",
+      "raw_url": "https://github.com/microsoft/SealPIR/raw/cf55f10be7bffba4e78d5ba32764284ac828d6cd/test%2Freplace_test.cpp",
+      "contents_url": "https://api.github.com/repos/microsoft/SealPIR/contents/test%2Freplace_test.cpp?ref=cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+      "patch": "@@ -64,10 +64,12 @@ int replace_test(uint64_t num_items, uint64_t item_size, uint32_t degree,\n   // the correct element.\n   auto db_copy(make_unique<uint8_t[]>(number_of_items * size_per_item));\n \n-  random_device rd;\n+  seal::Blake2xbPRNGFactory factory;\n+  auto gen =  factory.create();\n+\n   for (uint64_t i = 0; i < number_of_items; i++) {\n     for (uint64_t j = 0; j < size_per_item; j++) {\n-      uint8_t val = rd() % 256;\n+      uint8_t val = gen->generate() % 256;\n       db.get()[(i * size_per_item) + j] = val;\n       db_copy.get()[(i * size_per_item) + j] = val;\n     }\n@@ -96,7 +98,9 @@ int replace_test(uint64_t num_items, uint64_t item_size, uint32_t degree,\n   auto time_pre_us =\n       duration_cast<microseconds>(time_pre_e - time_pre_s).count();\n \n+\n   // Choose an index of an element in the DB\n+  random_device rd;\n   uint64_t ele_index =\n       rd() % number_of_items; // element in DB at random position\n   uint64_t index = client.get_fv_index(ele_index);   // index of FV plaintext"
+    },
+    {
+      "sha": "ecc05236cbfff7df51151b953520add4cadfbc42",
+      "filename": "test/simple_query_test.cpp",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 2,
+      "changes": 7,
+      "blob_url": "https://github.com/microsoft/SealPIR/blob/cf55f10be7bffba4e78d5ba32764284ac828d6cd/test%2Fsimple_query_test.cpp",
+      "raw_url": "https://github.com/microsoft/SealPIR/raw/cf55f10be7bffba4e78d5ba32764284ac828d6cd/test%2Fsimple_query_test.cpp",
+      "contents_url": "https://api.github.com/repos/microsoft/SealPIR/contents/test%2Fsimple_query_test.cpp?ref=cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+      "patch": "@@ -64,10 +64,12 @@ int simple_query_test(uint64_t num_items, uint64_t item_size, uint32_t degree,\n   // the correct element.\n   auto db_copy(make_unique<uint8_t[]>(number_of_items * size_per_item));\n \n-  random_device rd;\n+  seal::Blake2xbPRNGFactory factory;\n+  auto gen =  factory.create();\n+\n   for (uint64_t i = 0; i < number_of_items; i++) {\n     for (uint64_t j = 0; j < size_per_item; j++) {\n-      uint8_t val = rd() % 256;\n+      uint8_t val = gen->generate() % 256;\n       db.get()[(i * size_per_item) + j] = val;\n       db_copy.get()[(i * size_per_item) + j] = val;\n     }\n@@ -92,6 +94,7 @@ int simple_query_test(uint64_t num_items, uint64_t item_size, uint32_t degree,\n       duration_cast<microseconds>(time_pre_e - time_pre_s).count();\n \n   // Choose an index of an element in the DB\n+  random_device rd;\n   uint64_t ele_index =\n       rd() % number_of_items; // element in DB at random position\n   uint64_t index = client.get_fv_index(ele_index);   // index of FV plaintext"
+    }
+  ]
+}

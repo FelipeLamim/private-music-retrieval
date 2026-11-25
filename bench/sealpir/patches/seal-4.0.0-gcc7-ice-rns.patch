@@ -1,0 +1,11 @@
+--- a/native/src/seal/util/rns.cpp	2026-11-21 16:44:01.447466546 +0000
++++ b/native/src/seal/util/rns.cpp	2026-11-21 16:44:01.447466546 +0000
+@@ -1229,7 +1229,7 @@
+                     delta_mod_q_i, coeff_count_, last_modulus_value, get<1>(I), delta_mod_q_i);
+ 
+                 // c_i = c_i - c_last - neg_c_last_mod_t * q_last (mod 2q_i)
+-                const uint64_t two_times_q_i = get<1>(I).value() << 1;
++                uint64_t two_times_q_i = get<1>(I).value() << 1; // GCC 7.3 ICE workaround: was const
+                 SEAL_ITERATE(iter(get<0>(I), delta_mod_q_i, input[modulus_size - 1]), coeff_count_, [&](auto J) {
+                     get<0>(J) += two_times_q_i - barrett_reduce_64(get<2>(J), get<1>(I)) - get<1>(J);
+                 });

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Private Music Listening</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <a class="brand" href="#sobre"><span class="brand-mark" aria-hidden="true"></span>Private Music Listening</a>
+  <nav class="nav" aria-label="Seções">
+    <a id="nav-sobre" href="#sobre">Como funciona</a>
+    <a id="nav-ouvir" href="#ouvir">Ouvir</a>
+  </nav>
+</header>
+
+<main id="conteudo">
+
+  <!-- Tela inicial -->
+  <section id="view-landing" class="view landing" aria-labelledby="landing-title">
+   <div class="landing-top">
+    <div class="hero">
+      <p class="eyebrow">Recuperação privada de informação com criptografia homomórfica</p>
+      <h1 id="landing-title">Private Music Listening</h1>
+      <p class="lead">Ouça uma faixa do catálogo sem revelar ao servidor qual faixa você escolheu.</p>
+      <div class="intro">
+        <p>Você escolhe uma música. O cliente que roda neste computador transforma essa escolha em uma
+          consulta cifrada: o servidor recebe apenas dados cifrados e não consegue ver qual faixa foi pedida.</p>
+        <p>O servidor combina a consulta com todas as faixas do catálogo e devolve, bloco por bloco, uma resposta
+          também cifrada. Só este cliente tem a chave para decifrá-la, e o áudio que você ouve vem exclusivamente
+          dessas respostas.</p>
+        <p>O que fica protegido é a escolha da faixa, diante de um servidor que segue o protocolo mas tenta descobrir
+          o que você ouve. As faixas ficam guardadas sem cifra no servidor, e o protocolo não esconde que você usa o
+          serviço, quando ouve nem por quanto tempo.</p>
+      </div>
+      <a id="btn-start" class="btn btn-primary btn-lg" href="#ouvir">Começar a ouvir</a>
+    </div>
+
+    <div class="flow-card">
+      <p class="overline" id="flow-title">Como uma faixa chega até você</p>
+      <ol class="flow" aria-labelledby="flow-title">
+        <li><span class="step" aria-hidden="true">1</span><strong>Você escolhe</strong>
+          <span>uma faixa no catálogo.</span></li>
+        <li><span class="step" aria-hidden="true">2</span><strong>Consulta cifrada</strong>
+          <span>gerada neste computador, com uma chave secreta que nunca sai daqui.</span></li>
+        <li><span class="step" aria-hidden="true">3</span><strong>Resposta cifrada</strong>
+          <span>o servidor processa todas as faixas e devolve um bloco cifrado por vez.</span></li>
+        <li><span class="step" aria-hidden="true">4</span><strong>Decifra e toca</strong>
+          <span>o cliente decifra cada bloco, e o navegador toca o áudio.</span></li>
+      </ol>
+    </div>
+   </div>
+
+    <section class="explain" aria-labelledby="numbers-title">
+      <h2 id="numbers-title">O que os números mostram</h2>
+      <dl class="glossary">
+        <div><dt>Primeiro áudio</dt><dd>tempo até o primeiro bloco de áudio ser decifrado.</dd></div>
+        <div><dt>Início da reprodução</dt><dd>tempo entre o clique em “Ouvir” e o começo do som.</dd></div>
+        <div><dt>Recuperação completa</dt><dd>tempo para receber e decifrar todos os blocos.</dd></div>
+        <div><dt>Velocidade</dt><dd>segundos de áudio recuperados por segundo; acima de 1× a recuperação anda mais
+          rápido que a música.</dd></div>
+        <div><dt>Dados recebidos</dt><dd>bytes vindos do servidor; a expansão diz quantas vezes isso é maior que o
+          próprio áudio.</dd></div>
+        <div><dt>Interrupções</dt><dd>vezes em que a reprodução parou à espera de dados.</dd></div>
+      </dl>
+    </section>
+  </section>
+
+  <!-- Tela de audição -->
+  <section id="view-player" class="view" aria-labelledby="player-title" hidden>
+    <h1 id="player-title" class="sr-only" tabindex="-1">Ouvir</h1>
+    <p id="app-error" class="banner banner-error" role="alert" hidden></p>
+
+    <div class="player-grid">
+      <section id="catalog-section" class="card catalog" aria-labelledby="catalog-title">
+        <div class="card-head">
+          <div>
+            <h2 id="catalog-title">Catálogo</h2>
+            <p id="catalog-summary" class="muted small"></p>
+          </div>
+          <label class="field">Reprodução
+            <select id="mode">
+              <option value="progressive" selected>Progressiva: toca durante a recuperação</option>
+              <option value="complete">Completa: toca depois de recuperar tudo</option>
+            </select>
+          </label>
+        </div>
+        <p id="catalog-status" class="muted" role="status">Carregando catálogo…</p>
+        <div class="table-wrap">
+          <table id="catalog">
+            <thead><tr><th scope="col" class="num">#</th><th scope="col">Título</th>
+              <th scope="col" class="col-artist">Artista</th><th scope="col" class="num">Duração</th>
+              <th scope="col" class="act"><span class="sr-only">Ação</span></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+        <section id="player-section" class="card now-card" aria-labelledby="now-title">
+          <h2 id="now-title" class="overline">Tocando agora</h2>
+          <p id="now" class="now">Nenhuma faixa selecionada.</p>
+          <div class="transport">
+            <button id="btn-toggle" class="btn-round" type="button" aria-label="Tocar" disabled>
+              <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+              <svg class="icon icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zm6.5 0H17v14h-3.5z"/></svg>
+            </button>
+            <div class="timeline">
+              <input id="seek" type="range" min="0" max="0" step="0.1" value="0" aria-label="Posição na faixa" disabled>
+              <div class="times"><span id="time-pos">0:00</span><span id="time-avail"></span><span id="time-total">0:00</span></div>
+            </div>
+          </div>
+          <p class="legend" aria-hidden="true"><span class="swatch swatch-played"></span>tocado
+            <span class="swatch swatch-avail"></span>recuperado e decifrado</p>
+          <p id="play-state" class="play-state" aria-live="polite">Escolha uma faixa no catálogo.</p>
+          <p id="progress-text" class="progress-text" aria-live="polite">—</p>
+          <div class="controls">
+            <label class="field field-inline">Volume
+              <input id="volume" type="range" min="0" max="1" step="0.05" value="1"></label>
+            <button id="btn-cancel" class="btn btn-ghost" type="button" disabled>Cancelar recuperação</button>
+          </div>
+          <audio id="audio" preload="auto"></audio>
+        </section>
+
+        <section id="bytes-card" class="card" aria-labelledby="bytes-title">
+          <h2 id="bytes-title" class="overline">Dados recebidos e áudio entregue</h2>
+          <p id="bytes-empty" class="muted small">A comparação aparece quando a recuperação termina.</p>
+          <div id="bytes-chart" class="bars" hidden>
+            <div class="bar-row"><span class="bar-label">Recebido do servidor</span>
+              <span class="bar-track"><span id="bar-rx" class="bar bar-rx"></span></span><span id="bar-rx-v" class="bar-value"></span></div>
+            <div class="bar-row"><span class="bar-label">Áudio entregue</span>
+              <span class="bar-track"><span id="bar-pcm" class="bar bar-pcm"></span></span><span id="bar-pcm-v" class="bar-value"></span></div>
+            <p class="muted small">As respostas cifradas são maiores que o áudio que elas transportam.</p>
+          </div>
+        </section>
+
+        <section id="metrics-section" class="card" aria-labelledby="metrics-title">
+          <h2 id="metrics-title" class="overline">Esta recuperação</h2>
+          <div id="metrics" class="metrics"></div>
+          <p class="muted small">Valores medidos nesta recuperação, neste computador. “Calculado” indica uma razão entre
+            valores medidos; “—” indica um valor ainda indisponível.</p>
+        </section>
+    </div>
+
+    <details id="tech" class="card tech">
+      <summary>Detalhes técnicos</summary>
+      <div class="tech-body">
+        <div>
+          <h3>Parâmetros do protocolo</h3>
+          <p id="proto" class="mono">carregando parâmetros…</p>
+          <h3>Todas as medições</h3>
+          <div class="table-wrap">
+            <table id="stats" class="kv"><thead><tr><th scope="col">Medida</th><th scope="col">Valor</th>
+              <th scope="col">Origem</th></tr></thead><tbody></tbody></table>
+          </div>
+        </div>
+        <div>
+          <h3>O que o servidor recebeu</h3>
+          <p class="muted small">Últimas requisições deste cliente ao servidor. Os caminhos têm apenas identificadores
+            aleatórios de sessão e de consulta e índices públicos de bloco; os corpos são textos cifrados.</p>
+          <div class="table-wrap">
+            <table id="wire"><thead><tr><th scope="col">Método</th><th scope="col">Caminho</th>
+              <th scope="col" class="num">Enviado</th><th scope="col">Status</th><th scope="col" class="num">Recebido</th></tr></thead>
+              <tbody></tbody></table>
+          </div>
+          <h3>Limites</h3>
+          <ul class="limits">
+            <li>O servidor é considerado honesto, mas curioso: segue o protocolo e tenta inferir a faixa escolhida.</li>
+            <li>O protocolo não esconde quem você é (endereço, sessão), quando ouve, por quanto tempo nem quando cancela.</li>
+            <li id="limit-policy">Política de blocos: carregando…</li>
+            <li>Esta interface não tem download direto: o áudio vem só das respostas decifradas.</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

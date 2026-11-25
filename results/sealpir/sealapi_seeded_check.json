@@ -1,0 +1,1 @@
+{"binding": "tenseal.sealapi Encryptor.encrypt_symmetric(Plaintext) -> Serializable", "returned_type": "SerializableCiphertext", "has_save": true, "seeded_symmetric_ciphertext_bytes": 46390, "full_symmetric_ciphertext_bytes": 88524, "seeded_reloads": true}

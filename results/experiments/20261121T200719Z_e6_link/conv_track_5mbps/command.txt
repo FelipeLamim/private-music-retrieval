@@ -1,0 +1,2 @@
+server: nice -n 10 /workplace/felamim/TCC/.venv/bin/python -m pmr.conventional --catalog /workplace/felamim/TCC/data/catalog/mini --port 0 --ready-file results/experiments/20261121T200719Z_e6_link/conv_track_5mbps/server_ready.json --rate-limit-mbps 5
+client: nice -n 10 /workplace/felamim/TCC/.venv/bin/python -m pmr.experiments.client_worker --kind conv_track --server http://127.0.0.1:36437 --tracks 2,9 --warmup 1 --trials 2 --batch 4 --first-batch 1 --prefetch 2 --policy pad --out results/experiments/20261121T200719Z_e6_link/conv_track_5mbps/client.jsonl

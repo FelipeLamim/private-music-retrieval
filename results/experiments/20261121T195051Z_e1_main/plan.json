@@ -1,0 +1,70 @@
+{
+ "name": "e1_main",
+ "description": "E1/E5: full catalog (10 tracks, 166-193 s). Original didactic protocol vs packing vs optimized backend vs query expansion, plus conventional baselines.",
+ "defaults": {
+  "catalog": {
+   "dir": "data/catalog/full"
+  },
+  "tracks": [
+   2,
+   3,
+   6
+  ],
+  "warmup": 1,
+  "trials": 5,
+  "client": {
+   "batch": 8,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  }
+ },
+ "experiments": [
+  {
+   "name": "did_u8",
+   "server": {
+    "backend": "didactic",
+    "packing": "u8"
+   }
+  },
+  {
+   "name": "did_u16",
+   "server": {
+    "backend": "didactic",
+    "packing": "u16"
+   }
+  },
+  {
+   "name": "opt_u8",
+   "server": {
+    "backend": "optimized",
+    "packing": "u8"
+   }
+  },
+  {
+   "name": "opt_u16",
+   "server": {
+    "backend": "optimized",
+    "packing": "u16"
+   }
+  },
+  {
+   "name": "opt_u16_exp",
+   "server": {
+    "backend": "optimized",
+    "packing": "u16",
+    "query_mode": "expanded"
+   }
+  },
+  {
+   "name": "conv_track",
+   "kind": "conventional",
+   "client_kind": "conv_track"
+  },
+  {
+   "name": "conv_db",
+   "kind": "conventional",
+   "client_kind": "conv_db"
+  }
+ ]
+}

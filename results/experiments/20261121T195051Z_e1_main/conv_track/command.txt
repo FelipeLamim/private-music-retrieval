@@ -1,0 +1,2 @@
+server: nice -n 10 /workplace/felamim/TCC/.venv/bin/python -m pmr.conventional --catalog /workplace/felamim/TCC/data/catalog/full --port 0 --ready-file results/experiments/20261121T195051Z_e1_main/conv_track/server_ready.json
+client: nice -n 10 /workplace/felamim/TCC/.venv/bin/python -m pmr.experiments.client_worker --kind conv_track --server http://127.0.0.1:45123 --tracks 2,3,6 --warmup 1 --trials 5 --batch 8 --first-batch 1 --prefetch 2 --policy pad --out results/experiments/20261121T195051Z_e1_main/conv_track/client.jsonl

@@ -1,0 +1,78 @@
+Main: Generating SEAL parameters
+Main: Verifying SEAL parameters
+Main: SEAL parameters are good
+Main: Generating PIR parameters
+SEAL encryption parameters
+Degree of polynomial modulus (N): 4096
+Size of plaintext modulus (log t):20
+There are 3 coefficient modulus:
+Size of coefficient modulus 0 (log q_0): 36
+Size of coefficient modulus 1 (log q_1): 36
+Size of coefficient modulus 2 (log q_2): 37
+==============================
+PIR Parameters
+number of elements: 65536
+element size: 1024
+elements per BFV plaintext: 9
+dimensions for d-dimensional hyperrectangle: 2
+number of BFV plaintexts (before padding): 7282
+Number of BFV plaintexts after padding (to fill d-dimensional hyperrectangle): 7310
+expansion ratio: 12
+Using symmetric encryption: 1
+Using recursive mod switching: 1
+slot count: 4096
+==============================
+Main: Generating galois keys for client
+Main: Initializing server
+Main: Creating the database with random data (this may take some time) ...
+Elements per plaintext: 9
+Coeff per ptxt: 3690
+Bytes per plaintext: 9216
+Main: database pre processed 
+Main: element index = 30384 from [0, 65535]
+Main: FV index = 3376, FV offset = 0
+Client: index 1/ 2 = 39
+Client: number of ctxts needed for query = 1
+Client: Inverting 128
+Client: index 2/ 2 = 61
+Client: number of ctxts needed for query = 1
+Client: Inverting 128
+Main: query generated
+Client: index 1/ 2 = 39
+Client: number of ctxts needed for query = 1
+Client: Inverting 128
+Client: index 2/ 2 = 61
+Client: number of ctxts needed for query = 1
+Client: Inverting 128
+Main: serialized query generated
+Main: query deserialized
+Server: 1-th recursion level started 
+Server: n_i = 86
+Server: expanding 1 query ctxts
+-- expanding one query ctxt into 86 ctxts 
+Server: expansion done 
+Server: 1-th recursion level finished 
+
+Server: 2-th recursion level started 
+Server: n_i = 85
+Server: expanding 1 query ctxts
+-- expanding one query ctxt into 85 ctxts 
+Server: expansion done 
+Main: reply generated
+Client: 1/ 2-th decryption layer started.
+Client: done.
+
+Client: 2/ 2-th decryption layer started.
+Client: done.
+
+Main: reply decoded
+Main: PIR result correct!
+Main: PIRServer pre-processing time: 1534 ms
+Main: PIRClient query generation time: 1 ms
+Main: PIRClient serialized query generation time: 3 ms
+Main: PIRServer query deserialization time: 748 us
+Main: PIRServer reply generation time: 1092 ms
+Main: PIRClient answer decode time: 0 ms
+Main: Query size: 92801 bytes
+Main: Reply num ciphertexts: 4
+Main: Reply size: 185401 bytes

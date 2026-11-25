@@ -1,0 +1,10 @@
+{
+  "cmd": [
+    "./bin/main"
+  ],
+  "exit_code": 0,
+  "wall_s": 4.211,
+  "user_s": 3.92,
+  "sys_s": 0.29,
+  "max_rss_kib": 849180
+}

@@ -1,0 +1,60 @@
+{
+ "experiment": {
+  "catalog": {
+   "dir": "data/catalog/full"
+  },
+  "tracks": [
+   2,
+   3,
+   6
+  ],
+  "warmup": 1,
+  "trials": 5,
+  "client": {
+   "batch": 8,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  },
+  "name": "conv_track",
+  "kind": "conventional",
+  "client_kind": "conv_track"
+ },
+ "catalog_dir": "data/catalog/full",
+ "server_ready": {
+  "listen": {
+   "host": "127.0.0.1",
+   "port": 45123,
+   "pid": 29536
+  },
+  "setup_s": 0.0602099479874596
+ },
+ "server_ready_wall_s": 0.45953379303682595,
+ "client_wall_s": 0.37452321290038526,
+ "client_returncode": 0,
+ "server_proc_before": {
+  "proc": {
+   "VmHWM": 142484,
+   "VmRSS": 142484,
+   "utime_s": 0.25,
+   "stime_s": 0.16,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_proc_after": {
+  "proc": {
+   "VmHWM": 142700,
+   "VmRSS": 142700,
+   "utime_s": 0.26,
+   "stime_s": 0.18,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_app_stats": {
+  "pid": 29536,
+  "cpu_s": 0.45629471,
+  "access_log_entries": 16
+ }
+}

@@ -1,0 +1,151 @@
+{
+  "collected_utc": "2026-11-21T17:29:50Z",
+  "cpu": {
+    "model_name": "AMD EPYC 9R14",
+    "logical_cpus": 16,
+    "sockets": 1,
+    "cores_per_socket_reported": "16",
+    "siblings_per_socket_reported": "16",
+    "flags_of_interest": [
+      "adx",
+      "aes",
+      "avx",
+      "avx2",
+      "avx512dq",
+      "avx512f",
+      "avx512ifma",
+      "bmi2",
+      "pclmulqdq",
+      "sse4_2"
+    ],
+    "cache_cpu0": {
+      "L1_Data": "32K",
+      "L1_Instruction": "32K",
+      "L2_Unified": "1024K",
+      "L3_Unified": "32768K"
+    },
+    "hypervisor": true
+  },
+  "memory": {
+    "mem_total_kib": 32144472,
+    "mem_total_gib": 30.66
+  },
+  "os": {
+    "pretty_name": "Amazon Linux 2",
+    "kernel": "5.10.273-289.1133.amzn2int.x86_64",
+    "machine": "x86_64",
+    "glibc": "glibc 2.26"
+  },
+  "toolchain": {
+    "gxx": "g++ (GCC) 7.3.1 20180712 (Red Hat 7.3.1-18)",
+    "gcc": "gcc (GCC) 7.3.1 20180712 (Red Hat 7.3.1-18)",
+    "ld": "GNU ld version 2.29.1-31.amzn2.0.2",
+    "make": "GNU Make 3.82",
+    "cmake": "cmake version 3.31.12",
+    "cmake_path": ".tools/cmake/cmake-3.31.12-linux-x86_64/bin/cmake",
+    "python_for_scripts": "3.10.22"
+  },
+  "libraries": {
+    "seal": {
+      "version": "4.0.0",
+      "source": "https://github.com/microsoft/SEAL/archive/refs/tags/v4.0.0.tar.gz",
+      "builds": {
+        "default": {
+          "prefix": "third_party/install/seal-4.0.0",
+          "options": "Release (-O3 -DNDEBUG), static, SEAL_USE_ZSTD=ON (zstd 1.4.5), ZLIB/MSGSL/HEXL OFF, SEAL_AVOID_BRANCHING=OFF (default)"
+        },
+        "avoidbranch": {
+          "prefix": "third_party/install/seal-4.0.0-avoidbranch",
+          "options": "same as default but SEAL_AVOID_BRANCHING=ON"
+        }
+      },
+      "gcc7_workaround_patch": {
+        "file": "bench/sealpir/patches/seal-4.0.0-gcc7-ice-rns.patch",
+        "sha256": "3d1afb977e6365cfb72e4ee1867213bea76b6a4f71cf6cb1ae8dc453d583265f",
+        "applied": "g++ major version: 7; GCC 7 workaround patch applied: 1"
+      },
+      "unit_tests": "sealtest: see results/sealpir/logs/seal_tests.log and seal-avoidbranch_tests.log"
+    },
+    "sealpir": {
+      "commit": "cf55f10be7bffba4e78d5ba32764284ac828d6cd",
+      "commit_date": "2024-11-19T19:56:55Z",
+      "commit_message_first_line": "Merge pull request #23 from sga001/master",
+      "source": "https://github.com/microsoft/SealPIR/archive/cf55f10be7bffba4e78d5ba32764284ac828d6cd.tar.gz",
+      "bench_flags": "-O3 -std=gnu++1z, assertions enabled (no -DNDEBUG)"
+    },
+    "zstd": {
+      "version": "1.4.5",
+      "commit": "b706286adbba780006a47ef92df0ad7a785666b6"
+    },
+    "googletest": {
+      "version": "1.11.0",
+      "commit": "e2239ee6043f73722e7aa812a459f54a28552929",
+      "used_for": "SEAL unit tests only"
+    },
+    "tenseal_in_venv_for_calibration": {
+      "tenseal_version": "0.3.14",
+      "seal_version_pinned_by_tenseal_cmake": "4.1.1 (third_party/meta/tenseal_v0.3.14_seal.cmake)",
+      "sealapi_module_comment_section": [
+        "GCC: (GNU) 8.3.1 20190311 (Red Hat 8.3.1-3)",
+        "clang version 7.0.1 (tags/RELEASE_701/final)"
+      ]
+    }
+  },
+  "archives": [
+    {
+      "file": "cmake-3.31.12-linux-x86_64.tar.gz",
+      "url": "https://github.com/Kitware/CMake/releases/download/v3.31.12/cmake-3.31.12-linux-x86_64.tar.gz",
+      "sha256_expected": "0dc2e9a6860f06bf10bd8fadc03e35d9eeb4df46e33763a7e480e987758f385c",
+      "sha256_actual": "0dc2e9a6860f06bf10bd8fadc03e35d9eeb4df46e33763a7e480e987758f385c",
+      "match": true
+    },
+    {
+      "file": "cmake-3.31.12-SHA-256.txt",
+      "url": "https://github.com/Kitware/CMake/releases/download/v3.31.12/cmake-3.31.12-SHA-256.txt",
+      "sha256_expected": "159eb3b123ba8c8403a154c9d3389432276bf3bd21b274f0396fe17a6a7a7d9d",
+      "sha256_actual": "159eb3b123ba8c8403a154c9d3389432276bf3bd21b274f0396fe17a6a7a7d9d",
+      "match": true
+    },
+    {
+      "file": "cmake-3.31.12-SHA-256.txt.asc",
+      "url": "https://github.com/Kitware/CMake/releases/download/v3.31.12/cmake-3.31.12-SHA-256.txt.asc",
+      "sha256_expected": "af2c668941be2f3ec852f42b1e825e14b05dbc5d11c1f1a91e3986356672ded2",
+      "sha256_actual": "af2c668941be2f3ec852f42b1e825e14b05dbc5d11c1f1a91e3986356672ded2",
+      "match": true
+    },
+    {
+      "file": "SEAL-4.0.0.tar.gz",
+      "url": "https://github.com/microsoft/SEAL/archive/refs/tags/v4.0.0.tar.gz",
+      "sha256_expected": "616653498ba8f3e0cd23abef1d451c6e161a63bd88922f43de4b3595348b5c7e",
+      "sha256_actual": "616653498ba8f3e0cd23abef1d451c6e161a63bd88922f43de4b3595348b5c7e",
+      "match": true
+    },
+    {
+      "file": "zstd-b706286adbba780006a47ef92df0ad7a785666b6.tar.gz",
+      "url": "https://github.com/facebook/zstd/archive/b706286adbba780006a47ef92df0ad7a785666b6.tar.gz",
+      "sha256_expected": "c05687566bf68a5182d11a3e3498060f5b4d4243cf3c7e72c02d3cd4dadaeda7",
+      "sha256_actual": "c05687566bf68a5182d11a3e3498060f5b4d4243cf3c7e72c02d3cd4dadaeda7",
+      "match": true
+    },
+    {
+      "file": "SealPIR-cf55f10be7bffba4e78d5ba32764284ac828d6cd.tar.gz",
+      "url": "https://github.com/microsoft/SealPIR/archive/cf55f10be7bffba4e78d5ba32764284ac828d6cd.tar.gz",
+      "sha256_expected": "4dfe1a86c4988adfcb06b54d8d0185d4d2b44a046550ed5a17bbdc3471cc20c0",
+      "sha256_actual": "4dfe1a86c4988adfcb06b54d8d0185d4d2b44a046550ed5a17bbdc3471cc20c0",
+      "match": true
+    },
+    {
+      "file": "googletest-e2239ee6043f73722e7aa812a459f54a28552929.tar.gz",
+      "url": "https://github.com/google/googletest/archive/e2239ee6043f73722e7aa812a459f54a28552929.tar.gz",
+      "sha256_expected": "2765fbfaa978e90d1c8477bc2f2b9705be65b1b562bb215dbfaa76567d508fe1",
+      "sha256_actual": "2765fbfaa978e90d1c8477bc2f2b9705be65b1b562bb215dbfaa76567d508fe1",
+      "match": true
+    }
+  ],
+  "run_limits": {
+    "nice": 10,
+    "ulimit_v_kib": 3900000,
+    "build_jobs": 4,
+    "benchmark_threads": 1
+  }
+}

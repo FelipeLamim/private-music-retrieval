@@ -1,0 +1,223 @@
+{
+ "experiment": {
+  "catalog": {
+   "dir": "data/catalog/full"
+  },
+  "tracks": [
+   3,
+   6
+  ],
+  "warmup": 1,
+  "trials": 3,
+  "client": {
+   "batch": 8,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  },
+  "name": "workers4",
+  "server": {
+   "packing": "u16",
+   "workers": 4
+  }
+ },
+ "catalog_dir": "data/catalog/full",
+ "server_ready": {
+  "protocol": "pmr-pir/1",
+  "backend": {
+   "backend": "optimized",
+   "packing": "u16",
+   "query_mode": "selector",
+   "db_form": "ntt",
+   "mod_switch": true,
+   "seeded": true,
+   "slots": 4096,
+   "params": {
+    "scheme": "BFV",
+    "poly_modulus_degree": 4096,
+    "plain_modulus": 65537,
+    "coeff_modulus": [
+     68719403009,
+     68719230977,
+     137438822401
+    ],
+    "coeff_modulus_bits": [
+     36,
+     36,
+     37
+    ],
+    "security_level": "tc128",
+    "library": "Microsoft SEAL 4.1.1 via TenSEAL 0.3.14 (tenseal.sealapi)"
+   },
+   "label": "opt-u16-selector-ntt-ms-seed"
+  },
+  "layout": {
+   "num_records": 10,
+   "num_blocks": 753,
+   "block_bytes": 8192,
+   "packing": "u16",
+   "slots": 4096,
+   "record_lengths": [
+    5840000,
+    5990400,
+    5315200,
+    5628800,
+    5884800,
+    5673600,
+    6166400,
+    5494400,
+    5395200,
+    6080000
+   ]
+  },
+  "limits": {
+   "max_blocks_per_request": 64,
+   "max_queries_per_session": 4,
+   "max_ciphertext_bytes": 524288
+  },
+  "server": {
+   "workers": 4,
+   "setup_s": 1.0034,
+   "preprocess_s": 0.5482,
+   "catalog_load_s": 0.0607
+  },
+  "listen": {
+   "host": "127.0.0.1",
+   "port": 35261,
+   "pid": 2546
+  }
+ },
+ "server_ready_wall_s": 1.4650376780191436,
+ "client_wall_s": 7.968961911043152,
+ "client_returncode": 0,
+ "server_proc_before": {
+  "proc": {
+   "VmHWM": 147764,
+   "VmRSS": 92340,
+   "utime_s": 0.32,
+   "stime_s": 0.12,
+   "children_cutime_s": 0.0
+  },
+  "children": {
+   "2558": {
+    "VmHWM": 14580,
+    "VmRSS": 14580,
+    "utime_s": 0.01,
+    "stime_s": 0.0,
+    "children_cutime_s": 0.0
+   },
+   "2559": {
+    "VmHWM": 270500,
+    "VmRSS": 214484,
+    "utime_s": 0.73,
+    "stime_s": 0.18,
+    "children_cutime_s": 0.0
+   },
+   "2560": {
+    "VmHWM": 269696,
+    "VmRSS": 213556,
+    "utime_s": 0.75,
+    "stime_s": 0.15,
+    "children_cutime_s": 0.0
+   },
+   "2561": {
+    "VmHWM": 269336,
+    "VmRSS": 213440,
+    "utime_s": 0.8,
+    "stime_s": 0.12,
+    "children_cutime_s": 0.0
+   },
+   "2562": {
+    "VmHWM": 270752,
+    "VmRSS": 214848,
+    "utime_s": 0.82,
+    "stime_s": 0.11,
+    "children_cutime_s": 0.0
+   }
+  }
+ },
+ "server_proc_after": {
+  "proc": {
+   "VmHWM": 147764,
+   "VmRSS": 97672,
+   "utime_s": 0.8,
+   "stime_s": 0.62,
+   "children_cutime_s": 0.0
+  },
+  "children": {
+   "2558": {
+    "VmHWM": 14580,
+    "VmRSS": 14580,
+    "utime_s": 0.01,
+    "stime_s": 0.0,
+    "children_cutime_s": 0.0
+   },
+   "2559": {
+    "VmHWM": 270500,
+    "VmRSS": 220772,
+    "utime_s": 2.61,
+    "stime_s": 0.49,
+    "children_cutime_s": 0.0
+   },
+   "2560": {
+    "VmHWM": 269696,
+    "VmRSS": 219116,
+    "utime_s": 2.69,
+    "stime_s": 0.35,
+    "children_cutime_s": 0.0
+   },
+   "2561": {
+    "VmHWM": 269336,
+    "VmRSS": 218724,
+    "utime_s": 2.7,
+    "stime_s": 0.36,
+    "children_cutime_s": 0.0
+   },
+   "2562": {
+    "VmHWM": 270752,
+    "VmRSS": 221132,
+    "utime_s": 2.69,
+    "stime_s": 0.39,
+    "children_cutime_s": 0.0
+   }
+  }
+ },
+ "server_app_stats": {
+  "pid": 2546,
+  "sessions": 0,
+  "counters": {
+   "requests": 673,
+   "bytes_in": 3252088,
+   "bytes_out": 244431757,
+   "blocks_answered": 5271,
+   "errors": 0
+  },
+  "workers": [
+   {
+    "pid": 2559,
+    "peak_rss_kib": 270500,
+    "cpu_s": 3.110600167,
+    "db_bytes_est": 123863040
+   },
+   {
+    "pid": 2560,
+    "peak_rss_kib": 269696,
+    "cpu_s": 3.05057161,
+    "db_bytes_est": 123207680
+   },
+   {
+    "pid": 2561,
+    "peak_rss_kib": 269336,
+    "cpu_s": 3.069431588,
+    "db_bytes_est": 123207680
+   },
+   {
+    "pid": 2562,
+    "peak_rss_kib": 270752,
+    "cpu_s": 3.087433721,
+    "db_bytes_est": 123207680
+   }
+  ],
+  "main_cpu_s": 1.426308348
+ }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "e2_ablation",
+  "description": "E2: one-factor-at-a-time ablation around opt_u16 on the full catalog: preprocessing (db form), modulus switching, seeded queries, worker processes, request batch size.",
+  "defaults": {"catalog": {"dir": "data/catalog/full"}, "tracks": [3, 6], "warmup": 1, "trials": 3,
+               "client": {"batch": 8, "first_batch": 1, "prefetch": 2, "policy": "pad"}},
+  "experiments": [
+    {"name": "ref",        "server": {"packing": "u16"}},
+    {"name": "db_plain",   "server": {"packing": "u16", "db_form": "plain"}},
+    {"name": "db_raw",     "server": {"packing": "u16", "db_form": "raw"}},
+    {"name": "no_modsw",   "server": {"packing": "u16", "mod_switch": false}},
+    {"name": "no_seed",    "server": {"packing": "u16", "seeded": false}},
+    {"name": "workers2",   "server": {"packing": "u16", "workers": 2}},
+    {"name": "workers4",   "server": {"packing": "u16", "workers": 4}},
+    {"name": "batch1",     "server": {"packing": "u16"}, "client": {"batch": 1, "first_batch": 1, "prefetch": 2, "policy": "pad"}},
+    {"name": "batch32",    "server": {"packing": "u16"}, "client": {"batch": 32, "first_batch": 1, "prefetch": 2, "policy": "pad"}},
+    {"name": "w4_batch32", "server": {"packing": "u16", "workers": 4}, "client": {"batch": 32, "first_batch": 1, "prefetch": 2, "policy": "pad"}},
+    {"name": "stop_policy","server": {"packing": "u16"}, "client": {"batch": 8, "first_batch": 1, "prefetch": 2, "policy": "stop"}}
+  ]
+}

@@ -1,0 +1,62 @@
+{
+ "experiment": {
+  "catalog": {
+   "dir": "data/catalog/mini"
+  },
+  "tracks": [
+   2,
+   9
+  ],
+  "warmup": 1,
+  "trials": 2,
+  "client": {
+   "batch": 4,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  },
+  "name": "conv_track_5mbps",
+  "kind": "conventional",
+  "client_kind": "conv_track",
+  "server": {
+   "rate_limit_mbps": 5
+  }
+ },
+ "catalog_dir": "data/catalog/mini",
+ "server_ready": {
+  "listen": {
+   "host": "127.0.0.1",
+   "port": 36437,
+   "pid": 22445
+  },
+  "setup_s": 0.006738619995303452
+ },
+ "server_ready_wall_s": 0.45974142604973167,
+ "client_wall_s": 3.992211780976504,
+ "client_returncode": 0,
+ "server_proc_before": {
+  "proc": {
+   "VmHWM": 90956,
+   "VmRSS": 90956,
+   "utime_s": 0.24,
+   "stime_s": 0.11,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_proc_after": {
+  "proc": {
+   "VmHWM": 91604,
+   "VmRSS": 91604,
+   "utime_s": 0.25,
+   "stime_s": 0.12,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_app_stats": {
+  "pid": 22445,
+  "cpu_s": 0.37704202,
+  "access_log_entries": 5
+ }
+}

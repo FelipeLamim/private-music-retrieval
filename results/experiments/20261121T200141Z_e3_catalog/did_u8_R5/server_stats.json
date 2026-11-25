@@ -1,0 +1,134 @@
+{
+ "experiment": {
+  "catalog": {
+   "generate": {
+    "name": "n160_d30",
+    "profile": "full",
+    "n_tracks": 160,
+    "duration_s": 30
+   }
+  },
+  "warmup": 1,
+  "trials": 3,
+  "client": {
+   "batch": 8,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  },
+  "name": "did_u8_R5",
+  "tracks": [
+   0,
+   4
+  ],
+  "server": {
+   "backend": "didactic",
+   "packing": "u8",
+   "max_tracks": 5
+  }
+ },
+ "catalog_dir": "data/catalog/generated/n160_d30",
+ "server_ready": {
+  "protocol": "pmr-pir/1",
+  "backend": {
+   "backend": "didactic",
+   "packing": "u8",
+   "query_mode": "selector",
+   "db_form": "raw",
+   "mod_switch": false,
+   "seeded": false,
+   "slots": 4096,
+   "params": {
+    "scheme": "BFV",
+    "poly_modulus_degree": 4096,
+    "plain_modulus": 65537,
+    "coeff_modulus": [
+     68719403009,
+     68719230977,
+     137438822401
+    ],
+    "coeff_modulus_bits": [
+     36,
+     36,
+     37
+    ],
+    "security_level": "tc128",
+    "library": "Microsoft SEAL 4.1.1 via TenSEAL 0.3.14 (tenseal.sealapi)"
+   },
+   "label": "didactic-u8"
+  },
+  "layout": {
+   "num_records": 5,
+   "num_blocks": 235,
+   "block_bytes": 4096,
+   "packing": "u8",
+   "slots": 4096,
+   "record_lengths": [
+    960000,
+    960000,
+    960000,
+    960000,
+    960000
+   ]
+  },
+  "limits": {
+   "max_blocks_per_request": 64,
+   "max_queries_per_session": 4,
+   "max_ciphertext_bytes": 524288
+  },
+  "server": {
+   "workers": 1,
+   "setup_s": 0.3797,
+   "preprocess_s": 0.3625,
+   "catalog_load_s": 0.0132
+  },
+  "listen": {
+   "host": "127.0.0.1",
+   "port": 36443,
+   "pid": 7945
+  }
+ },
+ "server_ready_wall_s": 0.8619081770302728,
+ "client_wall_s": 10.427852047025226,
+ "client_returncode": 0,
+ "server_proc_before": {
+  "proc": {
+   "VmHWM": 134992,
+   "VmRSS": 130744,
+   "utime_s": 0.61,
+   "stime_s": 0.15,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_proc_after": {
+  "proc": {
+   "VmHWM": 146892,
+   "VmRSS": 143836,
+   "utime_s": 10.45,
+   "stime_s": 0.3,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_app_stats": {
+  "pid": 7945,
+  "sessions": 0,
+  "counters": {
+   "requests": 225,
+   "bytes_in": 3233179,
+   "bytes_out": 145655279,
+   "blocks_answered": 1645,
+   "errors": 0
+  },
+  "workers": [
+   {
+    "pid": 7945,
+    "peak_rss_kib": 146892,
+    "cpu_s": 10.757088352,
+    "db_bytes_est": 134758400
+   }
+  ],
+  "main_cpu_s": 10.757099592
+ }
+}

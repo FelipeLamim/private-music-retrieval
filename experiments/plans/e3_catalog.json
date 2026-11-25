@@ -1,0 +1,413 @@
+{
+ "name": "e3_catalog",
+ "description": "E3: catalog-size scaling with 30 s tracks (R = 2..160). Track i of the generated catalog depends only on (seed, i), so --max-tracks R selects a prefix.",
+ "defaults": {
+  "catalog": {
+   "generate": {
+    "name": "n160_d30",
+    "profile": "full",
+    "n_tracks": 160,
+    "duration_s": 30
+   }
+  },
+  "warmup": 1,
+  "trials": 3,
+  "client": {
+   "batch": 8,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  }
+ },
+ "experiments": [
+  {
+   "name": "opt_u16_R2",
+   "tracks": [
+    0,
+    1
+   ],
+   "server": {
+    "packing": "u16",
+    "max_tracks": 2
+   }
+  },
+  {
+   "name": "opt_u16_exp_R2",
+   "tracks": [
+    0,
+    1
+   ],
+   "server": {
+    "packing": "u16",
+    "query_mode": "expanded",
+    "max_tracks": 2
+   }
+  },
+  {
+   "name": "did_u8_R2",
+   "tracks": [
+    0,
+    1
+   ],
+   "server": {
+    "backend": "didactic",
+    "packing": "u8",
+    "max_tracks": 2
+   }
+  },
+  {
+   "name": "conv_track_R2",
+   "tracks": [
+    0,
+    1
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "max_tracks": 2
+   }
+  },
+  {
+   "name": "conv_db_R2",
+   "tracks": [
+    0,
+    1
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_db",
+   "server": {
+    "max_tracks": 2
+   }
+  },
+  {
+   "name": "opt_u16_R5",
+   "tracks": [
+    0,
+    4
+   ],
+   "server": {
+    "packing": "u16",
+    "max_tracks": 5
+   }
+  },
+  {
+   "name": "opt_u16_exp_R5",
+   "tracks": [
+    0,
+    4
+   ],
+   "server": {
+    "packing": "u16",
+    "query_mode": "expanded",
+    "max_tracks": 5
+   }
+  },
+  {
+   "name": "did_u8_R5",
+   "tracks": [
+    0,
+    4
+   ],
+   "server": {
+    "backend": "didactic",
+    "packing": "u8",
+    "max_tracks": 5
+   }
+  },
+  {
+   "name": "conv_track_R5",
+   "tracks": [
+    0,
+    4
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "max_tracks": 5
+   }
+  },
+  {
+   "name": "conv_db_R5",
+   "tracks": [
+    0,
+    4
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_db",
+   "server": {
+    "max_tracks": 5
+   }
+  },
+  {
+   "name": "opt_u16_R10",
+   "tracks": [
+    0,
+    9
+   ],
+   "server": {
+    "packing": "u16",
+    "max_tracks": 10
+   }
+  },
+  {
+   "name": "opt_u16_exp_R10",
+   "tracks": [
+    0,
+    9
+   ],
+   "server": {
+    "packing": "u16",
+    "query_mode": "expanded",
+    "max_tracks": 10
+   }
+  },
+  {
+   "name": "did_u8_R10",
+   "tracks": [
+    0,
+    9
+   ],
+   "server": {
+    "backend": "didactic",
+    "packing": "u8",
+    "max_tracks": 10
+   }
+  },
+  {
+   "name": "conv_track_R10",
+   "tracks": [
+    0,
+    9
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "max_tracks": 10
+   }
+  },
+  {
+   "name": "conv_db_R10",
+   "tracks": [
+    0,
+    9
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_db",
+   "server": {
+    "max_tracks": 10
+   }
+  },
+  {
+   "name": "opt_u16_R20",
+   "tracks": [
+    0,
+    19
+   ],
+   "server": {
+    "packing": "u16",
+    "max_tracks": 20
+   }
+  },
+  {
+   "name": "opt_u16_exp_R20",
+   "tracks": [
+    0,
+    19
+   ],
+   "server": {
+    "packing": "u16",
+    "query_mode": "expanded",
+    "max_tracks": 20
+   }
+  },
+  {
+   "name": "did_u8_R20",
+   "tracks": [
+    0,
+    19
+   ],
+   "server": {
+    "backend": "didactic",
+    "packing": "u8",
+    "max_tracks": 20
+   }
+  },
+  {
+   "name": "conv_track_R20",
+   "tracks": [
+    0,
+    19
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "max_tracks": 20
+   }
+  },
+  {
+   "name": "conv_db_R20",
+   "tracks": [
+    0,
+    19
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_db",
+   "server": {
+    "max_tracks": 20
+   }
+  },
+  {
+   "name": "opt_u16_R40",
+   "tracks": [
+    0,
+    39
+   ],
+   "server": {
+    "packing": "u16",
+    "max_tracks": 40
+   }
+  },
+  {
+   "name": "opt_u16_exp_R40",
+   "tracks": [
+    0,
+    39
+   ],
+   "server": {
+    "packing": "u16",
+    "query_mode": "expanded",
+    "max_tracks": 40
+   }
+  },
+  {
+   "name": "did_u8_R40",
+   "tracks": [
+    0,
+    39
+   ],
+   "server": {
+    "backend": "didactic",
+    "packing": "u8",
+    "max_tracks": 40
+   }
+  },
+  {
+   "name": "conv_track_R40",
+   "tracks": [
+    0,
+    39
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "max_tracks": 40
+   }
+  },
+  {
+   "name": "conv_db_R40",
+   "tracks": [
+    0,
+    39
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_db",
+   "server": {
+    "max_tracks": 40
+   }
+  },
+  {
+   "name": "opt_u16_R80",
+   "tracks": [
+    0,
+    79
+   ],
+   "server": {
+    "packing": "u16",
+    "max_tracks": 80
+   }
+  },
+  {
+   "name": "opt_u16_exp_R80",
+   "tracks": [
+    0,
+    79
+   ],
+   "server": {
+    "packing": "u16",
+    "query_mode": "expanded",
+    "max_tracks": 80
+   }
+  },
+  {
+   "name": "conv_track_R80",
+   "tracks": [
+    0,
+    79
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "max_tracks": 80
+   }
+  },
+  {
+   "name": "conv_db_R80",
+   "tracks": [
+    0,
+    79
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_db",
+   "server": {
+    "max_tracks": 80
+   }
+  },
+  {
+   "name": "opt_u16_R160",
+   "tracks": [
+    0,
+    159
+   ],
+   "server": {
+    "packing": "u16",
+    "max_tracks": 160
+   }
+  },
+  {
+   "name": "opt_u16_exp_R160",
+   "tracks": [
+    0,
+    159
+   ],
+   "server": {
+    "packing": "u16",
+    "query_mode": "expanded",
+    "max_tracks": 160
+   }
+  },
+  {
+   "name": "conv_track_R160",
+   "tracks": [
+    0,
+    159
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_track",
+   "server": {
+    "max_tracks": 160
+   }
+  },
+  {
+   "name": "conv_db_R160",
+   "tracks": [
+    0,
+    159
+   ],
+   "kind": "conventional",
+   "client_kind": "conv_db",
+   "server": {
+    "max_tracks": 160
+   }
+  }
+ ]
+}

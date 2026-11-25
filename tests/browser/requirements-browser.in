@@ -1,0 +1,4 @@
+# Direct dependencies of the headless-browser playback test (tests/browser/).
+# Installed ONLY into the separate virtualenv .venv-browser (never into .venv).
+# Lock with hashes: tests/browser/requirements-browser.lock (see tests/browser/README.md).
+playwright==1.65.2

@@ -1,0 +1,396 @@
+{
+ "schema": "pmr-browser-playback/1",
+ "started_utc": "2026-11-21T19:04:31.894Z",
+ "command": "tests/browser/run_browser_playback.py --mini-client .tmp/browser/run-20261121T190430Z-25308/client_mini_ready.json --mini-pir .tmp/browser/run-20261121T190430Z-25308/pir_mini_ready.json --no-extras --results .tmp/browser/failcheck/results_sigterm.json --logs-dir .tmp/browser/failcheck",
+ "playback_rate": 1.0,
+ "services": {
+  "mini": {
+   "pir": {
+    "protocol": "pmr-pir/1",
+    "backend": {
+     "backend": "optimized",
+     "packing": "u16",
+     "query_mode": "selector",
+     "db_form": "ntt",
+     "mod_switch": true,
+     "seeded": true,
+     "slots": 4096,
+     "params": {
+      "scheme": "BFV",
+      "poly_modulus_degree": 4096,
+      "plain_modulus": 65537,
+      "coeff_modulus": [
+       68719403009,
+       68719230977,
+       137438822401
+      ],
+      "coeff_modulus_bits": [
+       36,
+       36,
+       37
+      ],
+      "security_level": "tc128",
+      "library": "Microsoft SEAL 4.1.1 via TenSEAL 0.3.14 (tenseal.sealapi)"
+     },
+     "label": "opt-u16-selector-ntt-ms-seed"
+    },
+    "layout": {
+     "num_records": 10,
+     "num_blocks": 76,
+     "block_bytes": 8192,
+     "packing": "u16",
+     "slots": 4096,
+     "record_lengths": [
+      534400,
+      576000,
+      393600,
+      476800,
+      547200,
+      489600,
+      620800,
+      441600,
+      412800,
+      598400
+     ]
+    },
+    "limits": {
+     "max_blocks_per_request": 64,
+     "max_queries_per_session": 4,
+     "max_ciphertext_bytes": 524288
+    },
+    "server": {
+     "workers": 1,
+     "setup_s": 0.2303,
+     "preprocess_s": 0.2139,
+     "catalog_load_s": 0.0067
+    },
+    "listen": {
+     "host": "127.0.0.1",
+     "port": 38439,
+     "pid": 25321
+    }
+   },
+   "client": {
+    "listen": {
+     "host": "127.0.0.1",
+     "port": 43737,
+     "pid": 25341
+    },
+    "url": "http://127.0.0.1:43737/?t=<redacted>"
+   },
+   "manifest": "data/catalog/mini/manifest.json",
+   "catalog_id": "synthetic-mini-20261121"
+  }
+ },
+ "tracks": {
+  "T2": 2,
+  "T4": 8
+ },
+ "browser_launch_s": 0.038,
+ "environment": {
+  "python": "3.10.22",
+  "platform": "Linux-5.10.273-289.1133.amzn2int.x86_64-x86_64-with-glibc2.26",
+  "glibc": "glibc 2.26",
+  "os": "Amazon Linux 2",
+  "cpu_model": "AMD EPYC 9R14",
+  "cpu_count": 16,
+  "loadavg_start": [
+   0.85,
+   0.62,
+   0.41
+  ],
+  "playwright": {
+   "python_package": "1.65.2",
+   "driver": "1.65.1"
+  },
+  "node": {
+   "path": ".tools/node-v26.13.1-linux-x64-glibc-217/bin/node",
+   "version": "v26.13.1",
+   "source": "PLAYWRIGHT_NODEJS_PATH (unofficial-builds glibc-2.17 build)"
+  },
+  "browser": {
+   "engine": "chromium",
+   "version": "159.0.8154.6",
+   "headless": true,
+   "build": "Chrome Headless Shell 159.0.8154.6 (playwright chromium-headless-shell r1255)",
+   "cdp_version": {
+    "protocolVersion": "1.3",
+    "product": "HeadlessChrome/159.0.8154.6",
+    "revision": "@98a2592026af8d673b9fa83b626ac68bdf4ae78a",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36",
+    "jsVersion": "15.9.128.1"
+   },
+   "executable": ".tools/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell",
+   "executable_sha256": "24eb0a14de64ab0c9c2e283a5512ca817db64af8fd853cdb4d818f19a8e23b9b",
+   "launch_args_added_by_test": [
+    "--autoplay-policy=no-user-gesture-required",
+    "--disable-audio-output",
+    "--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
+   ],
+   "command_line": [
+    ".tools/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell",
+    "--disable-field-trial-config",
+    "--disable-background-networking",
+    "--disable-background-timer-throttling",
+    "--disable-backgrounding-occluded-windows",
+    "--disable-back-forward-cache",
+    "--disable-breakpad",
+    "--disable-component-extensions-with-background-pages",
+    "--disable-component-update",
+    "--no-default-browser-check",
+    "--disable-default-apps",
+    "--disable-dev-shm-usage",
+    "--disable-edgeupdater",
+    "--disable-extensions",
+    "--disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,HttpsUpgrades,HttpsFirstBalancedModeAutoEnable,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,AvoidCorsURLLoaderRestartOnRedirect,TcpPortRandomizationWin,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,PreconnectToSearch,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion",
+    "--enable-features=CDPScreenshotNewSurface,SkipListAccountsWithoutGaiaCookies",
+    "--allow-pre-commit-input",
+    "--disable-hang-monitor",
+    "--disable-ipc-flooding-protection",
+    "--disable-popup-blocking",
+    "--disable-prompt-on-repost",
+    "--disable-renderer-backgrounding",
+    "--disable-updater-scheduler",
+    "--force-color-profile=srgb",
+    "--metrics-recording-only",
+    "--no-first-run",
+    "--password-store=basic",
+    "--use-mock-keychain",
+    "--no-service-autorun",
+    "--disable-search-engine-choice-screen",
+    "--unsafely-disable-devtools-self-xss-warnings",
+    "--enable-unsafe-swiftshader",
+    "--edge-skip-compat-layer-relaunch",
+    "--disable-stack-profiler",
+    "--disable-infobars",
+    "--disable-sync",
+    "--do-not-de-elevate",
+    "--headless",
+    "--hide-scrollbars",
+    "--mute-audio",
+    "--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4",
+    "--no-sandbox",
+    "--autoplay-policy=no-user-gesture-required",
+    "--disable-audio-output",
+    "--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1",
+    "--user-data-dir=<temporary profile under TMPDIR>",
+    "--remote-debugging-pipe",
+    "--no-startup-window"
+   ],
+   "sandbox": "disabled (Playwright default chromiumSandbox=false adds --no-sandbox)",
+   "profile": "fresh temporary profile created by Playwright under TMPDIR, deleted on close"
+  },
+  "loadavg_end": [
+   0.8,
+   0.61,
+   0.41
+  ]
+ },
+ "aborted": "interrupted (SIGINT/SIGTERM/alarm)",
+ "finished_utc": "2026-11-21T19:04:39.907Z",
+ "duration_s": 8.013,
+ "tests": [
+  {
+   "id": "T1",
+   "name": "ui_load",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "catalog renders 10 rows",
+     "detail": {
+      "rows": 10
+     }
+    },
+    {
+     "ok": true,
+     "what": "row ids are row-0..row-9",
+     "detail": {
+      "ids": [
+       "row-0",
+       "row-1",
+       "row-2",
+       "row-3",
+       "row-4",
+       "row-5",
+       "row-6",
+       "row-7",
+       "row-8",
+       "row-9"
+      ]
+     }
+    },
+    {
+     "ok": true,
+     "what": "every row has one 'Ouvir' button"
+    },
+    {
+     "ok": true,
+     "what": "row titles match the manifest"
+    },
+    {
+     "ok": true,
+     "what": "#proto shows BFV parameters",
+     "detail": {
+      "proto": "BFV N=4096, t=65537, q=36+36+37 bits (tc128) · opt-u16-selector-ntt-ms-seed · 10 faixas × 76 blocos de 8192 B · política: pad"
+     }
+    },
+    {
+     "ok": true,
+     "what": "#proto BFV values equal the PIR server's /v1/pir/params",
+     "detail": {
+      "expected": "BFV N=4096, t=65537, q=36+36+37 bits (tc128)",
+      "proto": "BFV N=4096, t=65537, q=36+36+37 bits (tc128) · opt-u16-selector-ntt-ms-seed · 10 faixas × 76 blocos de 8192 B · política: pad"
+     }
+    },
+    {
+     "ok": true,
+     "what": "#proto shows the public layout (records × blocks × block size)"
+    },
+    {
+     "ok": true,
+     "what": "#proto shows the backend label",
+     "detail": {
+      "label": "opt-u16-selector-ntt-ms-seed"
+     }
+    },
+    {
+     "ok": true,
+     "what": "no page errors or console errors",
+     "detail": {
+      "errors": []
+     }
+    }
+   ],
+   "measurements": {
+    "proto": "BFV N=4096, t=65537, q=36+36+37 bits (tc128) · opt-u16-selector-ntt-ms-seed · 10 faixas × 76 blocos de 8192 B · política: pad",
+    "rows": [
+     [
+      "0",
+      "Wandering Bridges",
+      "PMR synthetic generator",
+      "0:17"
+     ],
+     [
+      "1",
+      "Velvet Islands",
+      "PMR synthetic generator",
+      "0:18"
+     ],
+     [
+      "2",
+      "Amber Summit",
+      "PMR synthetic generator",
+      "0:12"
+     ],
+     [
+      "3",
+      "Misty Fields",
+      "PMR synthetic generator",
+      "0:15"
+     ],
+     [
+      "4",
+      "Velvet Tides",
+      "PMR synthetic generator",
+      "0:17"
+     ],
+     [
+      "5",
+      "Northern Valley",
+      "PMR synthetic generator",
+      "0:15"
+     ],
+     [
+      "6",
+      "Lunar Engines",
+      "PMR synthetic generator",
+      "0:19"
+     ],
+     [
+      "7",
+      "Paper Rivers",
+      "PMR synthetic generator",
+      "0:14"
+     ],
+     [
+      "8",
+      "Silver Fields",
+      "PMR synthetic generator",
+      "0:13"
+     ],
+     [
+      "9",
+      "Copper Valley",
+      "PMR synthetic generator",
+      "0:19"
+     ]
+    ],
+    "title": "Streaming musical privativo — PIR com BFV"
+   },
+   "notes": [],
+   "started_utc": "2026-11-21T19:04:32.449Z",
+   "finished_utc": "2026-11-21T19:04:32.469Z",
+   "duration_s": 0.02
+  },
+  {
+   "id": "T2",
+   "name": "progressive_playback",
+   "required": true,
+   "status": "running",
+   "checks": [
+    {
+     "ok": true,
+     "what": "POST /api/play accepted (progressive)",
+     "detail": {
+      "status": 201,
+      "mode": "progressive"
+     }
+    },
+    {
+     "ok": true,
+     "what": "audio element fired 'playing'"
+    },
+    {
+     "ok": true,
+     "what": "audio src is the client's token-protected WAV stream for this job",
+     "detail": {
+      "src": "/api/jobs/<redacted>/audio.wav?t=<redacted>"
+     }
+    },
+    {
+     "ok": true,
+     "what": "currentTime advanced beyond 2 s"
+    }
+   ],
+   "measurements": {
+    "track": {
+     "index": 2,
+     "id": "t02",
+     "title": "Amber Summit",
+     "duration_s": 12.3,
+     "pcm_bytes": 393600
+    },
+    "playback_rate": 1.0,
+    "playback_rate_note": "1.0 = real time"
+   },
+   "notes": [],
+   "started_utc": "2026-11-21T19:04:32.469Z",
+   "finished_utc": "2026-11-21T19:04:39.877Z",
+   "duration_s": 7.407
+  }
+ ],
+ "extra_probes": [],
+ "summary": {
+  "required_passed": 1,
+  "required_total": 2,
+  "required_failed": [
+   "T2"
+  ],
+  "extra_probes": {},
+  "overall": "fail"
+ },
+ "page_log_entries": 0,
+ "note": "Abort-path check: SIGTERM sent to scripts/browser_test.sh about 9 s into the run; the runner recorded the abort and every process was stopped (exit 143)."
+}

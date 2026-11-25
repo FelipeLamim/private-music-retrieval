@@ -1,0 +1,67 @@
+{
+ "experiment": {
+  "catalog": {
+   "generate": {
+    "name": "n160_d30",
+    "profile": "full",
+    "n_tracks": 160,
+    "duration_s": 30
+   }
+  },
+  "warmup": 1,
+  "trials": 3,
+  "client": {
+   "batch": 8,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  },
+  "name": "conv_track_R2",
+  "tracks": [
+   0,
+   1
+  ],
+  "kind": "conventional",
+  "client_kind": "conv_track",
+  "server": {
+   "max_tracks": 2
+  }
+ },
+ "catalog_dir": "data/catalog/generated/n160_d30",
+ "server_ready": {
+  "listen": {
+   "host": "127.0.0.1",
+   "port": 36823,
+   "pid": 7805
+  },
+  "setup_s": 0.009782153996638954
+ },
+ "server_ready_wall_s": 0.4596228110603988,
+ "client_wall_s": 0.22199353098403662,
+ "client_returncode": 0,
+ "server_proc_before": {
+  "proc": {
+   "VmHWM": 89256,
+   "VmRSS": 89256,
+   "utime_s": 0.21,
+   "stime_s": 0.15,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_proc_after": {
+  "proc": {
+   "VmHWM": 89440,
+   "VmRSS": 89440,
+   "utime_s": 0.21,
+   "stime_s": 0.15,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_app_stats": {
+  "pid": 7805,
+  "cpu_s": 0.376050674,
+  "access_log_entries": 7
+ }
+}

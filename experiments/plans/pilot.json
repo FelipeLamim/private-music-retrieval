@@ -1,0 +1,12 @@
+{
+  "name": "pilot",
+  "description": "Harness validation on the mini catalog (not used for thesis results).",
+  "defaults": {"catalog": {"dir": "data/catalog/mini"}, "tracks": [0, 5], "warmup": 1, "trials": 2},
+  "experiments": [
+    {"name": "opt_u16", "server": {"backend": "optimized", "packing": "u16"}},
+    {"name": "didactic_u8", "server": {"backend": "didactic", "packing": "u8"}},
+    {"name": "opt_u16_w2", "server": {"backend": "optimized", "packing": "u16", "workers": 2}},
+    {"name": "conv_track", "kind": "conventional", "client_kind": "conv_track"},
+    {"name": "conv_db", "kind": "conventional", "client_kind": "conv_db"}
+  ]
+}

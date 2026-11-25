@@ -1,0 +1,56 @@
+# Cache do Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Ambientes virtuais e configurações locais
+.venv/
+venv/
+.env
+
+# Blocos recuperados: podem ser gerados novamente
+results/**/*.bin
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ferramentas, caches e arquivos locais do projeto PMR
+.tools/
+.cache/
+.config/
+.home/
+.local/
+.tmp/
+.venv*
+logs/
+setup.log
+archives/
+dist/
+third_party/src/
+third_party/build/
+third_party/install/
+thesis/build/
+**/__pycache__/
+**/results/**/*.bin
+
+/thesis/
+/docs/
+/legacy/
+
+# Local thesis and internal-report helpers (keep on disk, exclude from Git).
+/scripts/build_thesis.sh
+/scripts/install_tectonic.sh
+/scripts/capture_ui_figures.sh
+/experiments/make_tex_tables.py
+/tests/browser/capture_ui_figures.py
+/bench/sealpir/fill_report_tables.py
+
+# Local authentication, session state and environment files.
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*client_ready*.json

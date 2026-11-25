@@ -1,0 +1,208 @@
+{
+ "experiment": {
+  "catalog": {
+   "generate": {
+    "name": "n160_d30",
+    "profile": "full",
+    "n_tracks": 160,
+    "duration_s": 30
+   }
+  },
+  "warmup": 1,
+  "trials": 3,
+  "client": {
+   "batch": 8,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  },
+  "name": "opt_u16_R80",
+  "tracks": [
+   0,
+   79
+  ],
+  "server": {
+   "packing": "u16",
+   "max_tracks": 80
+  }
+ },
+ "catalog_dir": "data/catalog/generated/n160_d30",
+ "server_ready": {
+  "protocol": "pmr-pir/1",
+  "backend": {
+   "backend": "optimized",
+   "packing": "u16",
+   "query_mode": "selector",
+   "db_form": "ntt",
+   "mod_switch": true,
+   "seeded": true,
+   "slots": 4096,
+   "params": {
+    "scheme": "BFV",
+    "poly_modulus_degree": 4096,
+    "plain_modulus": 65537,
+    "coeff_modulus": [
+     68719403009,
+     68719230977,
+     137438822401
+    ],
+    "coeff_modulus_bits": [
+     36,
+     36,
+     37
+    ],
+    "security_level": "tc128",
+    "library": "Microsoft SEAL 4.1.1 via TenSEAL 0.3.14 (tenseal.sealapi)"
+   },
+   "label": "opt-u16-selector-ntt-ms-seed"
+  },
+  "layout": {
+   "num_records": 80,
+   "num_blocks": 118,
+   "block_bytes": 8192,
+   "packing": "u16",
+   "slots": 4096,
+   "record_lengths": [
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000,
+    960000
+   ]
+  },
+  "limits": {
+   "max_blocks_per_request": 64,
+   "max_queries_per_session": 4,
+   "max_ciphertext_bytes": 524288
+  },
+  "server": {
+   "workers": 1,
+   "setup_s": 2.8337,
+   "preprocess_s": 2.728,
+   "catalog_load_s": 0.0961
+  },
+  "listen": {
+   "host": "127.0.0.1",
+   "port": 44569,
+   "pid": 10598
+  }
+ },
+ "server_ready_wall_s": 3.278569980058819,
+ "client_wall_s": 6.811730092973448,
+ "client_returncode": 0,
+ "server_proc_before": {
+  "proc": {
+   "VmHWM": 777992,
+   "VmRSS": 702828,
+   "utime_s": 2.91,
+   "stime_s": 0.3,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_proc_after": {
+  "proc": {
+   "VmHWM": 777992,
+   "VmRSS": 727380,
+   "utime_s": 7.57,
+   "stime_s": 0.57,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_app_stats": {
+  "pid": 10598,
+  "sessions": 0,
+  "counters": {
+   "requests": 120,
+   "bytes_in": 26016161,
+   "bytes_out": 38305939,
+   "blocks_answered": 826,
+   "errors": 0
+  },
+  "workers": [
+   {
+    "pid": 10598,
+    "peak_rss_kib": 777992,
+    "cpu_s": 8.157163975,
+    "db_bytes_est": 618659840
+   }
+  ],
+  "main_cpu_s": 8.157174855
+ }
+}

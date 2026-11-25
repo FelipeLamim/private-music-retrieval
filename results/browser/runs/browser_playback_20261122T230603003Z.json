@@ -1,0 +1,2401 @@
+{
+ "schema": "pmr-browser-playback/1",
+ "started_utc": "2026-11-22T23:06:03.003Z",
+ "command": "tests/browser/run_browser_playback.py --mini-client .tmp/browser/run-20261122T230559Z-346/client_mini_ready.json --mini-pir .tmp/browser/run-20261122T230559Z-346/pir_mini_ready.json --full-client .tmp/browser/run-20261122T230559Z-346/client_full_ready.json --full-pir .tmp/browser/run-20261122T230559Z-346/pir_full_ready.json",
+ "playback_rate": 1.0,
+ "services": {
+  "mini": {
+   "pir": {
+    "protocol": "pmr-pir/1",
+    "backend": {
+     "backend": "optimized",
+     "packing": "u16",
+     "query_mode": "selector",
+     "db_form": "ntt",
+     "mod_switch": true,
+     "seeded": true,
+     "slots": 4096,
+     "params": {
+      "scheme": "BFV",
+      "poly_modulus_degree": 4096,
+      "plain_modulus": 65537,
+      "coeff_modulus": [
+       68719403009,
+       68719230977,
+       137438822401
+      ],
+      "coeff_modulus_bits": [
+       36,
+       36,
+       37
+      ],
+      "security_level": "tc128",
+      "library": "Microsoft SEAL 4.1.1 via TenSEAL 0.3.14 (tenseal.sealapi)"
+     },
+     "label": "opt-u16-selector-ntt-ms-seed"
+    },
+    "layout": {
+     "num_records": 10,
+     "num_blocks": 76,
+     "block_bytes": 8192,
+     "packing": "u16",
+     "slots": 4096,
+     "record_lengths": [
+      534400,
+      576000,
+      393600,
+      476800,
+      547200,
+      489600,
+      620800,
+      441600,
+      412800,
+      598400
+     ]
+    },
+    "limits": {
+     "max_blocks_per_request": 64,
+     "max_queries_per_session": 4,
+     "max_ciphertext_bytes": 524288
+    },
+    "server": {
+     "workers": 1,
+     "setup_s": 0.2301,
+     "preprocess_s": 0.2138,
+     "catalog_load_s": 0.0067
+    },
+    "listen": {
+     "host": "127.0.0.1",
+     "port": 46813,
+     "pid": 360
+    }
+   },
+   "client": {
+    "listen": {
+     "host": "127.0.0.1",
+     "port": 43105,
+     "pid": 369
+    },
+    "url": "http://127.0.0.1:43105/?t=<redacted>"
+   },
+   "manifest": "data/catalog/mini/manifest.json",
+   "catalog_id": "synthetic-mini-20261121"
+  },
+  "full": {
+   "pir": {
+    "backend": {
+     "backend": "optimized",
+     "packing": "u16",
+     "query_mode": "selector",
+     "db_form": "ntt",
+     "mod_switch": true,
+     "seeded": true,
+     "slots": 4096,
+     "params": {
+      "scheme": "BFV",
+      "poly_modulus_degree": 4096,
+      "plain_modulus": 65537,
+      "coeff_modulus": [
+       68719403009,
+       68719230977,
+       137438822401
+      ],
+      "coeff_modulus_bits": [
+       36,
+       36,
+       37
+      ],
+      "security_level": "tc128",
+      "library": "Microsoft SEAL 4.1.1 via TenSEAL 0.3.14 (tenseal.sealapi)"
+     },
+     "label": "opt-u16-selector-ntt-ms-seed"
+    },
+    "layout": {
+     "num_records": 10,
+     "num_blocks": 753,
+     "block_bytes": 8192,
+     "packing": "u16",
+     "slots": 4096,
+     "record_lengths": [
+      5840000,
+      5990400,
+      5315200,
+      5628800,
+      5884800,
+      5673600,
+      6166400,
+      5494400,
+      5395200,
+      6080000
+     ]
+    },
+    "server": {
+     "workers": 1,
+     "setup_s": 2.251,
+     "preprocess_s": 2.1814,
+     "catalog_load_s": 0.0599
+    },
+    "listen": {
+     "host": "127.0.0.1",
+     "port": 33845,
+     "pid": 361
+    }
+   },
+   "client": {
+    "listen": {
+     "host": "127.0.0.1",
+     "port": 36241,
+     "pid": 441
+    },
+    "url": "http://127.0.0.1:36241/?t=<redacted>"
+   },
+   "manifest": "data/catalog/full/manifest.json",
+   "catalog_id": "synthetic-full-20261121"
+  }
+ },
+ "tracks": {
+  "T2": 2,
+  "T4": 8
+ },
+ "browser_launch_s": 0.038,
+ "environment": {
+  "python": "3.10.22",
+  "platform": "Linux-5.10.273-289.1133.amzn2int.x86_64-x86_64-with-glibc2.26",
+  "glibc": "glibc 2.26",
+  "os": "Amazon Linux 2",
+  "cpu_model": "AMD EPYC 9R14",
+  "cpu_count": 16,
+  "loadavg_start": [
+   0.07,
+   0.18,
+   0.18
+  ],
+  "playwright": {
+   "python_package": "1.65.2",
+   "driver": "1.65.1"
+  },
+  "node": {
+   "path": ".tools/node-v26.13.1-linux-x64-glibc-217/bin/node",
+   "version": "v26.13.1",
+   "source": "PLAYWRIGHT_NODEJS_PATH (unofficial-builds glibc-2.17 build)"
+  },
+  "browser": {
+   "engine": "chromium",
+   "version": "159.0.8154.6",
+   "headless": true,
+   "build": "Chrome Headless Shell 159.0.8154.6 (playwright chromium-headless-shell r1255)",
+   "cdp_version": {
+    "protocolVersion": "1.3",
+    "product": "HeadlessChrome/159.0.8154.6",
+    "revision": "@98a2592026af8d673b9fa83b626ac68bdf4ae78a",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36",
+    "jsVersion": "15.9.128.1"
+   },
+   "executable": ".tools/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell",
+   "executable_sha256": "24eb0a14de64ab0c9c2e283a5512ca817db64af8fd853cdb4d818f19a8e23b9b",
+   "launch_args_added_by_test": [
+    "--autoplay-policy=no-user-gesture-required",
+    "--disable-audio-output",
+    "--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
+   ],
+   "command_line": [
+    ".tools/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell",
+    "--disable-field-trial-config",
+    "--disable-background-networking",
+    "--disable-background-timer-throttling",
+    "--disable-backgrounding-occluded-windows",
+    "--disable-back-forward-cache",
+    "--disable-breakpad",
+    "--disable-component-extensions-with-background-pages",
+    "--disable-component-update",
+    "--no-default-browser-check",
+    "--disable-default-apps",
+    "--disable-dev-shm-usage",
+    "--disable-edgeupdater",
+    "--disable-extensions",
+    "--disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,HttpsUpgrades,HttpsFirstBalancedModeAutoEnable,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,AvoidCorsURLLoaderRestartOnRedirect,TcpPortRandomizationWin,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,PreconnectToSearch,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion",
+    "--enable-features=CDPScreenshotNewSurface,SkipListAccountsWithoutGaiaCookies",
+    "--allow-pre-commit-input",
+    "--disable-hang-monitor",
+    "--disable-ipc-flooding-protection",
+    "--disable-popup-blocking",
+    "--disable-prompt-on-repost",
+    "--disable-renderer-backgrounding",
+    "--disable-updater-scheduler",
+    "--force-color-profile=srgb",
+    "--metrics-recording-only",
+    "--no-first-run",
+    "--password-store=basic",
+    "--use-mock-keychain",
+    "--no-service-autorun",
+    "--disable-search-engine-choice-screen",
+    "--unsafely-disable-devtools-self-xss-warnings",
+    "--enable-unsafe-swiftshader",
+    "--edge-skip-compat-layer-relaunch",
+    "--disable-stack-profiler",
+    "--disable-infobars",
+    "--disable-sync",
+    "--do-not-de-elevate",
+    "--headless",
+    "--hide-scrollbars",
+    "--mute-audio",
+    "--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4",
+    "--no-sandbox",
+    "--autoplay-policy=no-user-gesture-required",
+    "--disable-audio-output",
+    "--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1",
+    "--user-data-dir=<temporary profile under TMPDIR>",
+    "--remote-debugging-pipe",
+    "--no-startup-window"
+   ],
+   "sandbox": "disabled (Playwright default chromiumSandbox=false adds --no-sandbox)",
+   "profile": "fresh temporary profile created by Playwright under TMPDIR, deleted on close"
+  },
+  "loadavg_end": [
+   0.18,
+   0.19,
+   0.19
+  ]
+ },
+ "post_checks": {
+  "mini_client_alive": true,
+  "full_client_alive": true
+ },
+ "finished_utc": "2026-11-22T23:06:37.968Z",
+ "duration_s": 34.965,
+ "tests": [
+  {
+   "id": "T1",
+   "name": "ui_load",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "the printed URL opens the landing screen (player hidden)",
+     "detail": {
+      "landing": {
+       "landingVisible": true,
+       "playerHidden": true,
+       "hash": "",
+       "title": "Private Music Listening",
+       "heading": "Private Music Listening",
+       "cta": "Começar a ouvir",
+       "after_cta": {
+        "landingVisible": false,
+        "playerHidden": false,
+        "hash": "#ouvir",
+        "title": "Ouvir · Private Music Listening",
+        "heading": "Private Music Listening",
+        "cta": "Começar a ouvir"
+       }
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "landing shows the product title",
+     "detail": {
+      "heading": "Private Music Listening"
+     }
+    },
+    {
+     "ok": true,
+     "what": "landing has the 'Começar a ouvir' action",
+     "detail": {
+      "cta": "Começar a ouvir"
+     }
+    },
+    {
+     "ok": true,
+     "what": "'Começar a ouvir' opens the listening screen (#ouvir)",
+     "detail": {
+      "after": {
+       "landingVisible": false,
+       "playerHidden": false,
+       "hash": "#ouvir",
+       "title": "Ouvir · Private Music Listening",
+       "heading": "Private Music Listening",
+       "cta": "Começar a ouvir"
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "catalog renders 10 rows",
+     "detail": {
+      "rows": 10
+     }
+    },
+    {
+     "ok": true,
+     "what": "row ids are row-0..row-9",
+     "detail": {
+      "ids": [
+       "row-0",
+       "row-1",
+       "row-2",
+       "row-3",
+       "row-4",
+       "row-5",
+       "row-6",
+       "row-7",
+       "row-8",
+       "row-9"
+      ]
+     }
+    },
+    {
+     "ok": true,
+     "what": "every row has one 'Ouvir' button"
+    },
+    {
+     "ok": true,
+     "what": "row titles match the manifest"
+    },
+    {
+     "ok": true,
+     "what": "#proto shows BFV parameters",
+     "detail": {
+      "proto": "BFV N=4096, t=65537, q=36+36+37 bits (tc128) · opt-u16-selector-ntt-ms-seed · 10 faixas × 76 blocos de 8192 B · política: pad"
+     }
+    },
+    {
+     "ok": true,
+     "what": "#proto BFV values equal the PIR server's /v1/pir/params",
+     "detail": {
+      "expected": "BFV N=4096, t=65537, q=36+36+37 bits (tc128)",
+      "proto": "BFV N=4096, t=65537, q=36+36+37 bits (tc128) · opt-u16-selector-ntt-ms-seed · 10 faixas × 76 blocos de 8192 B · política: pad"
+     }
+    },
+    {
+     "ok": true,
+     "what": "#proto shows the public layout (records × blocks × block size)"
+    },
+    {
+     "ok": true,
+     "what": "#proto shows the backend label",
+     "detail": {
+      "label": "opt-u16-selector-ntt-ms-seed"
+     }
+    },
+    {
+     "ok": true,
+     "what": "no page errors or console errors",
+     "detail": {
+      "errors": []
+     }
+    }
+   ],
+   "measurements": {
+    "proto": "BFV N=4096, t=65537, q=36+36+37 bits (tc128) · opt-u16-selector-ntt-ms-seed · 10 faixas × 76 blocos de 8192 B · política: pad",
+    "rows": [
+     [
+      "0",
+      "Wandering Bridges",
+      "PMR synthetic generator",
+      "0:16"
+     ],
+     [
+      "1",
+      "Velvet Islands",
+      "PMR synthetic generator",
+      "0:18"
+     ],
+     [
+      "2",
+      "Amber Summit",
+      "PMR synthetic generator",
+      "0:12"
+     ],
+     [
+      "3",
+      "Misty Fields",
+      "PMR synthetic generator",
+      "0:14"
+     ],
+     [
+      "4",
+      "Velvet Tides",
+      "PMR synthetic generator",
+      "0:17"
+     ],
+     [
+      "5",
+      "Northern Valley",
+      "PMR synthetic generator",
+      "0:15"
+     ],
+     [
+      "6",
+      "Lunar Engines",
+      "PMR synthetic generator",
+      "0:19"
+     ],
+     [
+      "7",
+      "Paper Rivers",
+      "PMR synthetic generator",
+      "0:13"
+     ],
+     [
+      "8",
+      "Silver Fields",
+      "PMR synthetic generator",
+      "0:12"
+     ],
+     [
+      "9",
+      "Copper Valley",
+      "PMR synthetic generator",
+      "0:18"
+     ]
+    ],
+    "title": "Ouvir · Private Music Listening"
+   },
+   "notes": [],
+   "started_utc": "2026-11-22T23:06:03.570Z",
+   "finished_utc": "2026-11-22T23:06:03.575Z",
+   "duration_s": 0.005
+  },
+  {
+   "id": "T2",
+   "name": "progressive_playback",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "POST /api/play accepted (progressive)",
+     "detail": {
+      "status": 201,
+      "mode": "progressive"
+     }
+    },
+    {
+     "ok": true,
+     "what": "audio element fired 'playing'"
+    },
+    {
+     "ok": true,
+     "what": "audio src is the client's token-protected WAV stream for this job",
+     "detail": {
+      "src": "/api/jobs/<redacted>/audio.wav?t=<redacted>"
+     }
+    },
+    {
+     "ok": true,
+     "what": "currentTime advanced beyond 2 s"
+    },
+    {
+     "ok": true,
+     "what": "audio element reached 'ended'"
+    },
+    {
+     "ok": true,
+     "what": "job state is 'complete'",
+     "detail": {
+      "state": "complete"
+     }
+    },
+    {
+     "ok": true,
+     "what": "all padded catalog blocks retrieved (policy pad)",
+     "detail": {
+      "blocks_done": 76,
+      "blocks_total": 76
+     }
+    },
+    {
+     "ok": true,
+     "what": "PCM bytes retrieved equal the manifest",
+     "detail": {
+      "pcm_done": 393600,
+      "pcm_total": 393600,
+      "manifest": 393600
+     }
+    },
+    {
+     "ok": true,
+     "what": "UI reported playback.startup_s",
+     "detail": {
+      "playback": {
+       "startup_s": 0.13389999997615815,
+       "stalls": 0,
+       "stall_s": 0,
+       "ended": true,
+       "position_s": 12.3,
+       "events": [
+        [
+         "playing",
+         0.134,
+         0
+        ],
+        [
+         "ended",
+         12.519
+        ]
+       ]
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "UI reported playback.ended = true to the client"
+    },
+    {
+     "ok": true,
+     "what": "UI reported playback.stalls",
+     "detail": {
+      "stalls": 0
+     }
+    },
+    {
+     "ok": true,
+     "what": "no media 'error' events",
+     "detail": {
+      "errors": []
+     }
+    },
+    {
+     "ok": true,
+     "what": "media duration equals the track duration",
+     "detail": {
+      "duration": 12.3,
+      "expected": 12.3
+     }
+    },
+    {
+     "ok": true,
+     "what": "playback position at the end equals the duration",
+     "detail": {
+      "currentTime": 12.3
+     }
+    },
+    {
+     "ok": true,
+     "what": "the 'Ouvir' click was a trusted input event"
+    },
+    {
+     "ok": true,
+     "what": "no page errors or console errors",
+     "detail": {
+      "errors": []
+     }
+    },
+    {
+     "ok": true,
+     "what": "every browser request went to the loopback client origin",
+     "detail": {
+      "offsite": []
+     }
+    }
+   ],
+   "measurements": {
+    "track": {
+     "index": 2,
+     "id": "t02",
+     "title": "Amber Summit",
+     "duration_s": 12.3,
+     "pcm_bytes": 393600
+    },
+    "playback_rate": 1.0,
+    "playback_rate_note": "1.0 = real time",
+    "job_id": "-jIIQTuAYW_b",
+    "first_block_s": 0.04070171294733882,
+    "playback": {
+     "startup_s": 0.13389999997615815,
+     "stalls": 0,
+     "stall_s": 0,
+     "ended": true,
+     "position_s": 12.3,
+     "events": [
+      [
+       "playing",
+       0.134,
+       0
+      ],
+      [
+       "ended",
+       12.519
+      ]
+     ]
+    },
+    "result_timings_ms": {
+     "query_gen_ms": 19.39,
+     "query_upload_ms": 15.89,
+     "first_block_ms": 40.51,
+     "total_ms": 196.59,
+     "client_decode_ms": 100.22,
+     "server_prepare_ms": 14.2
+    },
+    "result_bytes": {
+     "query_body": 464525,
+     "response_bodies": 3524691,
+     "wire_tx": 466228,
+     "wire_rx": 3527823,
+     "blocks": 76,
+     "pcm": 393600,
+     "session_setup_body": 0
+    },
+    "server_compute_ms": 142.65,
+    "server_total_ms": 143.11,
+    "job_elapsed_s": 0.19695955305360258,
+    "blocks": [
+     76,
+     76
+    ],
+    "harness": {
+     "click_to_playing_s": 0.1345,
+     "click_to_currentTime_gt_2s_s": 2.216600000023842,
+     "playing_to_ended_s": 12.384900000095367,
+     "expected_playing_to_ended_s": 12.3,
+     "waiting_events_after_start": 0,
+     "media_requests": [
+      {
+       "method": "GET",
+       "range": "bytes=0-"
+      }
+     ]
+    },
+    "media_events": [
+     {
+      "ev": "emptied",
+      "t": 158.09999990463257,
+      "ct": 0,
+      "rs": 0,
+      "ns": 3
+     },
+     {
+      "ev": "play",
+      "t": 159.69999992847443,
+      "ct": 0,
+      "rs": 0,
+      "ns": 2
+     },
+     {
+      "ev": "waiting",
+      "t": 159.89999997615814,
+      "ct": 0,
+      "rs": 0,
+      "ns": 2
+     },
+     {
+      "ev": "loadstart",
+      "t": 159.89999997615814,
+      "ct": 0,
+      "rs": 0,
+      "ns": 2
+     },
+     {
+      "ev": "durationchange",
+      "t": 251.29999995231628,
+      "ct": 0,
+      "rs": 1,
+      "ns": 2
+     },
+     {
+      "ev": "loadedmetadata",
+      "t": 251.39999997615814,
+      "ct": 0,
+      "rs": 1,
+      "ns": 2
+     },
+     {
+      "ev": "loadeddata",
+      "t": 276.6999999284744,
+      "ct": 0,
+      "rs": 4,
+      "ns": 2
+     },
+     {
+      "ev": "canplay",
+      "t": 276.6999999284744,
+      "ct": 0,
+      "rs": 4,
+      "ns": 2
+     },
+     {
+      "ev": "playing",
+      "t": 277.09999990463257,
+      "ct": 2.4e-05,
+      "rs": 4,
+      "ns": 2
+     },
+     {
+      "ev": "canplaythrough",
+      "t": 277.1999999284744,
+      "ct": 2.4e-05,
+      "rs": 4,
+      "ns": 2
+     },
+     {
+      "ev": "suspend",
+      "t": 290.5,
+      "ct": 0.013419,
+      "rs": 4,
+      "ns": 1
+     },
+     {
+      "ev": "pause",
+      "t": 12661.5,
+      "ct": 12.3,
+      "rs": 4,
+      "ns": 1
+     },
+     {
+      "ev": "ended",
+      "t": 12662,
+      "ct": 12.3,
+      "rs": 4,
+      "ns": 1
+     }
+    ],
+    "final_audio_state": {
+     "src": "/api/jobs/<redacted>/audio.wav?t=<redacted>",
+     "currentTime": 12.3,
+     "duration": 12.3,
+     "paused": true,
+     "ended": true,
+     "readyState": 4,
+     "networkState": 1,
+     "playbackRate": 1,
+     "error": null,
+     "buffered": [
+      [
+       0,
+       12.3
+      ]
+     ]
+    }
+   },
+   "notes": [],
+   "started_utc": "2026-11-22T23:06:03.575Z",
+   "finished_utc": "2026-11-22T23:06:16.164Z",
+   "duration_s": 12.589
+  },
+  {
+   "id": "T3",
+   "name": "audio_content_hash",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "audio element has the job's audio.wav URL"
+    },
+    {
+     "ok": true,
+     "what": "page is a secure context (crypto.subtle available on 127.0.0.1)"
+    },
+    {
+     "ok": true,
+     "what": "in-page fetch of audio.wav: 200 audio/wav",
+     "detail": {
+      "status": 200,
+      "contentType": "audio/wav"
+     }
+    },
+    {
+     "ok": true,
+     "what": "WAV header: PCM, mono, 16 kHz, 16-bit",
+     "detail": {
+      "fmt": {
+       "format": 1,
+       "channels": 1,
+       "sampleRate": 16000,
+       "bits": 16
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "WAV data chunk length equals manifest pcm_bytes",
+     "detail": {
+      "dataBytes": 393600
+     }
+    },
+    {
+     "ok": true,
+     "what": "SHA-256 of the PCM bytes received by the browser equals manifest sha256_pcm",
+     "detail": {
+      "got": "9e11072512fa3c4f2098fc80b65c0e13d6b6a6dce1f8cce7f8dda2436d73ebda",
+      "expected": "9e11072512fa3c4f2098fc80b65c0e13d6b6a6dce1f8cce7f8dda2436d73ebda"
+     }
+    },
+    {
+     "ok": true,
+     "what": "decodeAudioData output: same sample count, 16 kHz, mono (no resampling)",
+     "detail": {
+      "decoded": {
+       "length": 196800,
+       "sampleRate": 16000,
+       "channels": 1,
+       "duration": 12.3,
+       "min": -0.707916259765625,
+       "max": 0.6769616007804871
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "decoded samples -> int16: bit-exact, or within 1 LSB and bit-exact under the decoder's scaling",
+     "detail": {
+      "requested": {
+       "formula": "Math.round(x*32768), clamped to [-32768, 32767]",
+       "sha256": "4cd10afdbe770b92f34ac7b6dad427574c4b37959b8b357eb62edbb6aef6e79d",
+       "maxAbsDiff": 1,
+       "samplesDiffering": 56,
+       "firstDiffIndex": 25899,
+       "lengthDiff": 0
+      },
+      "inverse": {
+       "formula": "x<0 ? Math.round(x*32768) : Math.round(x*32767)",
+       "sha256": "9e11072512fa3c4f2098fc80b65c0e13d6b6a6dce1f8cce7f8dda2436d73ebda",
+       "maxAbsDiff": 0,
+       "samplesDiffering": 0,
+       "firstDiffIndex": -1,
+       "lengthDiff": 0
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "every decoded float equals Chromium's int16->float conversion of the delivered PCM sample",
+     "detail": {
+      "model": {
+       "formula": "float32(v)*float32(1/32767) if v >= 0 else float32(v)*float32(1/32768)",
+       "samplesNotMatchingModel": 0,
+       "predictedDiffsUnderRequested": 56
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "the samples that differ under Math.round(x*32768) are exactly those the model predicts",
+     "detail": {
+      "differing": 56,
+      "predicted": 56
+     }
+    }
+   ],
+   "measurements": {
+    "requested_conversion_bit_exact": false,
+    "inverse_conversion_bit_exact": true,
+    "track": {
+     "index": 2,
+     "id": "t02"
+    },
+    "manifest_sha256_pcm": "9e11072512fa3c4f2098fc80b65c0e13d6b6a6dce1f8cce7f8dda2436d73ebda",
+    "browser": {
+     "status": 200,
+     "contentType": "audio/wav",
+     "wavBytes": 393644,
+     "fetchMs": 3.3000000715255737,
+     "secureContext": true,
+     "riff": "RIFF",
+     "wave": "WAVE",
+     "fmt": {
+      "format": 1,
+      "channels": 1,
+      "sampleRate": 16000,
+      "bits": 16
+     },
+     "dataOffset": 44,
+     "dataBytes": 393600,
+     "rawPcmSha256": "9e11072512fa3c4f2098fc80b65c0e13d6b6a6dce1f8cce7f8dda2436d73ebda",
+     "refSamples": 196800,
+     "refMin": -23197,
+     "refMax": 22182,
+     "refSamplesGe16384": 55,
+     "decodeMs": 4.199999928474426,
+     "decoded": {
+      "length": 196800,
+      "sampleRate": 16000,
+      "channels": 1,
+      "duration": 12.3,
+      "min": -0.707916259765625,
+      "max": 0.6769616007804871
+     },
+     "requested": {
+      "formula": "Math.round(x*32768), clamped to [-32768, 32767]",
+      "sha256": "4cd10afdbe770b92f34ac7b6dad427574c4b37959b8b357eb62edbb6aef6e79d",
+      "maxAbsDiff": 1,
+      "samplesDiffering": 56,
+      "firstDiffIndex": 25899,
+      "lengthDiff": 0
+     },
+     "inverse": {
+      "formula": "x<0 ? Math.round(x*32768) : Math.round(x*32767)",
+      "sha256": "9e11072512fa3c4f2098fc80b65c0e13d6b6a6dce1f8cce7f8dda2436d73ebda",
+      "maxAbsDiff": 0,
+      "samplesDiffering": 0,
+      "firstDiffIndex": -1,
+      "lengthDiff": 0
+     },
+     "chromiumModel": {
+      "formula": "float32(v)*float32(1/32767) if v >= 0 else float32(v)*float32(1/32768)",
+      "samplesNotMatchingModel": 0,
+      "predictedDiffsUnderRequested": 56
+     }
+    }
+   },
+   "notes": [
+    "Chromium converts int16 to float asymmetrically: float(v)*float(1/32768) for v < 0 and float(v)*float(1/32767) for v >= 0 (media/base/audio_sample_types.h, FixedSampleTypeTraits::To). Math.round(x*32768) therefore returns v+1 for positive samples near or above 16384 (56 of 196800 samples here, all off by exactly 1); the inverse x<0 ? round(x*32768) : round(x*32767) recovers every sample, so the SHA-256 matches."
+   ],
+   "started_utc": "2026-11-22T23:06:16.164Z",
+   "finished_utc": "2026-11-22T23:06:16.192Z",
+   "duration_s": 0.028
+  },
+  {
+   "id": "T6",
+   "name": "wire_table",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "#wire table has rows",
+     "detail": {
+      "rows": 14
+     }
+    },
+    {
+     "ok": true,
+     "what": "every #wire path is a whitelisted PIR endpoint with random tokens / block indices",
+     "detail": {
+      "offending": []
+     }
+    },
+    {
+     "ok": true,
+     "what": "no #wire path contains the selected track's title, id or index as a path element",
+     "detail": {
+      "track": {
+       "index": 2,
+       "id": "t02",
+       "title": "Amber Summit"
+      },
+      "leaks": {}
+     }
+    },
+    {
+     "ok": true,
+     "what": "no #wire path names any catalog track",
+     "detail": {
+      "leaks": {}
+     }
+    },
+    {
+     "ok": true,
+     "what": "no #wire path has a numeric path element",
+     "detail": {
+      "paths": []
+     }
+    },
+    {
+     "ok": true,
+     "what": "#wire shows the query upload of the latest retrieval"
+    },
+    {
+     "ok": true,
+     "what": "block requests of the latest retrieval follow the public, track-independent schedule",
+     "detail": {
+      "got": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        8
+       ],
+       [
+        9,
+        8
+       ],
+       [
+        17,
+        8
+       ],
+       [
+        25,
+        8
+       ],
+       [
+        33,
+        8
+       ],
+       [
+        41,
+        8
+       ],
+       [
+        49,
+        8
+       ],
+       [
+        57,
+        8
+       ],
+       [
+        65,
+        8
+       ],
+       [
+        73,
+        3
+       ]
+      ],
+      "expected": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        8
+       ],
+       [
+        9,
+        8
+       ],
+       [
+        17,
+        8
+       ],
+       [
+        25,
+        8
+       ],
+       [
+        33,
+        8
+       ],
+       [
+        41,
+        8
+       ],
+       [
+        49,
+        8
+       ],
+       [
+        57,
+        8
+       ],
+       [
+        65,
+        8
+       ],
+       [
+        73,
+        3
+       ]
+      ]
+     }
+    },
+    {
+     "ok": true,
+     "what": "one fresh query token for all block requests of the retrieval",
+     "detail": {
+      "tokens": 1
+     }
+    },
+    {
+     "ok": true,
+     "what": "all requests of the retrieval succeeded",
+     "detail": {
+      "statuses": [
+       "201",
+       "200",
+       "200",
+       "200",
+       "200",
+       "200",
+       "200",
+       "200",
+       "200",
+       "200",
+       "200",
+       "200",
+       "200"
+      ]
+     }
+    }
+   ],
+   "measurements": {
+    "rows": [
+     [
+      "DELETE",
+      "/v1/pir/queries/<redacted>",
+      "0 B",
+      "200",
+      "15 B"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=73&count=3",
+      "0 B",
+      "200",
+      "139,3 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=65&count=8",
+      "0 B",
+      "200",
+      "371,0 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=57&count=8",
+      "0 B",
+      "200",
+      "371,3 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=49&count=8",
+      "0 B",
+      "200",
+      "371,0 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=41&count=8",
+      "0 B",
+      "200",
+      "371,0 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=33&count=8",
+      "0 B",
+      "200",
+      "370,8 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=25&count=8",
+      "0 B",
+      "200",
+      "370,9 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=17&count=8",
+      "0 B",
+      "200",
+      "371,1 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=9&count=8",
+      "0 B",
+      "200",
+      "371,1 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=1&count=8",
+      "0 B",
+      "200",
+      "370,8 kB"
+     ],
+     [
+      "GET",
+      "/v1/pir/queries/<redacted>/blocks?start=0&count=1",
+      "0 B",
+      "200",
+      "46,4 kB"
+     ],
+     [
+      "POST",
+      "/v1/pir/sessions/<redacted>/queries",
+      "464,5 kB",
+      "201",
+      "54 B"
+     ],
+     [
+      "POST",
+      "/v1/pir/sessions",
+      "0 B",
+      "201",
+      "36 B"
+     ]
+    ],
+    "expected_schedule": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      9,
+      8
+     ],
+     [
+      17,
+      8
+     ],
+     [
+      25,
+      8
+     ],
+     [
+      33,
+      8
+     ],
+     [
+      41,
+      8
+     ],
+     [
+      49,
+      8
+     ],
+     [
+      57,
+      8
+     ],
+     [
+      65,
+      8
+     ],
+     [
+      73,
+      3
+     ]
+    ],
+    "policy": "pad",
+    "batch": 8,
+    "first_batch": 1
+   },
+   "notes": [],
+   "started_utc": "2026-11-22T23:06:16.192Z",
+   "finished_utc": "2026-11-22T23:06:16.199Z",
+   "duration_s": 0.008
+  },
+  {
+   "id": "T7",
+   "name": "artifacts_screenshot",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "screenshot written",
+     "detail": {
+      "path": "logs/browser/ui_after_playback.png",
+      "bytes": 204395
+     }
+    },
+    {
+     "ok": true,
+     "what": "progress line shows the completed retrieval",
+     "detail": {
+      "progress": "concluída · 76 blocos em 0,20 s · 27 deles são preenchimento, que esconde a duração da faixa"
+     }
+    },
+    {
+     "ok": true,
+     "what": "metric 'Primeiro áudio' shows a value",
+     "detail": {
+      "metric": {
+       "label": "Primeiro áudio",
+       "value": "0,04 s",
+       "pending": false,
+       "source": "medido no cliente"
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "metric 'Início da reprodução' shows a value",
+     "detail": {
+      "metric": {
+       "label": "Início da reprodução",
+       "value": "0,13 s",
+       "pending": false,
+       "source": "medido no navegador"
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "metric 'Recuperação completa' shows a value",
+     "detail": {
+      "metric": {
+       "label": "Recuperação completa",
+       "value": "197 ms",
+       "pending": false,
+       "source": "medido no cliente"
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "metric 'Velocidade' shows a value",
+     "detail": {
+      "metric": {
+       "label": "Velocidade",
+       "value": "62,4×",
+       "pending": false,
+       "source": "calculado"
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "metric 'Dados recebidos' shows a value",
+     "detail": {
+      "metric": {
+       "label": "Dados recebidos",
+       "value": "3,53 MB",
+       "pending": false,
+       "source": "medido no cliente"
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "metric 'Interrupções' shows a value",
+     "detail": {
+      "metric": {
+       "label": "Interrupções",
+       "value": "0",
+       "pending": false,
+       "source": "medido no navegador"
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "every metric names its source (measured in the client or browser, or calculated)",
+     "detail": {
+      "metrics": [
+       {
+        "label": "Primeiro áudio",
+        "value": "0,04 s",
+        "pending": false,
+        "source": "medido no cliente"
+       },
+       {
+        "label": "Início da reprodução",
+        "value": "0,13 s",
+        "pending": false,
+        "source": "medido no navegador"
+       },
+       {
+        "label": "Recuperação completa",
+        "value": "197 ms",
+        "pending": false,
+        "source": "medido no cliente"
+       },
+       {
+        "label": "Velocidade",
+        "value": "62,4×",
+        "pending": false,
+        "source": "calculado"
+       },
+       {
+        "label": "Dados recebidos",
+        "value": "3,53 MB",
+        "pending": false,
+        "source": "medido no cliente"
+       },
+       {
+        "label": "Interrupções",
+        "value": "0",
+        "pending": false,
+        "source": "medido no navegador"
+       }
+      ]
+     }
+    },
+    {
+     "ok": true,
+     "what": "'Blocos recebidos' matches the client's job status",
+     "detail": {
+      "shown": "76 de 76",
+      "job": {
+       "blocks_done": 76,
+       "blocks_total": 76,
+       "state": "complete"
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "'Dados recebidos' equals the client's measured wire_rx",
+     "detail": {
+      "shown": {
+       "label": "Dados recebidos",
+       "value": "3,53 MB",
+       "pending": false,
+       "source": "medido no cliente"
+      },
+      "wire_rx": 3527823
+     }
+    }
+   ],
+   "measurements": {
+    "screenshot": "logs/browser/ui_after_playback.png",
+    "screenshot_bytes": 204395,
+    "stats_table": [
+     [
+      "Primeiro bloco decifrado (TTFA)",
+      "0,04 s"
+     ],
+     [
+      "Início da reprodução no navegador",
+      "0,13 s"
+     ],
+     [
+      "Interrupções / tempo parado",
+      "0 / 0,00 s"
+     ],
+     [
+      "Geração da consulta",
+      "19 ms"
+     ],
+     [
+      "Envio da consulta",
+      "16 ms"
+     ],
+     [
+      "Preparação da consulta no servidor",
+      "14 ms"
+     ],
+     [
+      "Processamento homomórfico no servidor",
+      "143 ms"
+     ],
+     [
+      "Decifração e decodificação no cliente",
+      "100 ms"
+     ],
+     [
+      "Recuperação completa",
+      "197 ms"
+     ],
+     [
+      "Vazão (s de áudio por s)",
+      "62,4×"
+     ],
+     [
+      "Blocos recebidos",
+      "76 de 76"
+     ],
+     [
+      "Consulta enviada (corpo)",
+      "464,5 kB"
+     ],
+     [
+      "Bytes enviados / recebidos (HTTP)",
+      "466,2 kB / 3,53 MB"
+     ],
+     [
+      "Áudio PCM recuperado",
+      "393,6 kB"
+     ],
+     [
+      "Expansão (recebido ÷ áudio)",
+      "8,96×"
+     ],
+     [
+      "Chaves de sessão enviadas (uma vez)",
+      "0 B"
+     ]
+    ],
+    "ui_state": {
+     "progress": "concluída · 76 blocos em 0,20 s · 27 deles são preenchimento, que esconde a duração da faixa",
+     "now": "Amber SummitPMR synthetic generatorreprodução progressiva · 0:12 · licença CC0-1.0",
+     "mode": "progressive",
+     "cancelDisabled": true,
+     "toggleDisabled": false,
+     "toggleLabel": "Tocar",
+     "playState": "Fim da faixa."
+    },
+    "metrics": [
+     {
+      "label": "Primeiro áudio",
+      "value": "0,04 s",
+      "pending": false,
+      "source": "medido no cliente"
+     },
+     {
+      "label": "Início da reprodução",
+      "value": "0,13 s",
+      "pending": false,
+      "source": "medido no navegador"
+     },
+     {
+      "label": "Recuperação completa",
+      "value": "197 ms",
+      "pending": false,
+      "source": "medido no cliente"
+     },
+     {
+      "label": "Velocidade",
+      "value": "62,4×",
+      "pending": false,
+      "source": "calculado"
+     },
+     {
+      "label": "Dados recebidos",
+      "value": "3,53 MB",
+      "pending": false,
+      "source": "medido no cliente"
+     },
+     {
+      "label": "Interrupções",
+      "value": "0",
+      "pending": false,
+      "source": "medido no navegador"
+     }
+    ]
+   },
+   "notes": [],
+   "started_utc": "2026-11-22T23:06:16.199Z",
+   "finished_utc": "2026-11-22T23:06:16.293Z",
+   "duration_s": 0.094
+  },
+  {
+   "id": "T4",
+   "name": "complete_mode",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "mode select set to 'complete'"
+    },
+    {
+     "ok": true,
+     "what": "audio has no src before the click"
+    },
+    {
+     "ok": true,
+     "what": "POST /api/play accepted (complete)",
+     "detail": {
+      "status": 201,
+      "mode": "complete"
+     }
+    },
+    {
+     "ok": true,
+     "what": "playback started after the src was set ('playing', currentTime > 2 s)"
+    },
+    {
+     "ok": true,
+     "what": "while playing, the toggle offers 'Pausar'",
+     "detail": {
+      "label": "Pausar"
+     }
+    },
+    {
+     "ok": true,
+     "what": "#btn-toggle pauses playback",
+     "detail": {
+      "before": 2.042544,
+      "after": 2.042544
+     }
+    },
+    {
+     "ok": true,
+     "what": "paused: toggle offers 'Tocar', state says 'Pausada.'",
+     "detail": {
+      "label": "Tocar",
+      "state": "Pausada."
+     }
+    },
+    {
+     "ok": true,
+     "what": "#btn-toggle resumes playback"
+    },
+    {
+     "ok": true,
+     "what": "job poller ran without errors",
+     "detail": {
+      "error": null
+     }
+    },
+    {
+     "ok": true,
+     "what": "job ended in state 'complete'",
+     "detail": {
+      "state": "complete"
+     }
+    },
+    {
+     "ok": true,
+     "what": "the 'Ouvir' click was recorded in the page"
+    },
+    {
+     "ok": true,
+     "what": "src attribute was set (MutationObserver)"
+    },
+    {
+     "ok": true,
+     "what": "no harness poll sent after the src was set saw state 'running'",
+     "detail": {
+      "violations": []
+     }
+    },
+    {
+     "ok": true,
+     "what": "src was set after the earliest possible completion time of the job (5 ms clock tolerance)",
+     "detail": {
+      "src_set_epoch": 1795388776.7242,
+      "completion_window_epoch": [
+       1795388776.649181,
+       1795388776.6524308
+      ]
+     }
+    },
+    {
+     "ok": true,
+     "what": "UI progress line showed 'concluída' when the src was set",
+     "detail": {
+      "progress": "concluída · 76 blocos em 0,20 s · 25 deles são preenchimento, que esconde a duração da faixa"
+     }
+    },
+    {
+     "ok": true,
+     "what": "audio element had no src and NETWORK_EMPTY until completion (50 ms samples)",
+     "detail": {
+      "samples": 5,
+      "violating": []
+     }
+    },
+    {
+     "ok": true,
+     "what": "no audio.wav request before the src was set",
+     "detail": {
+      "requests": []
+     }
+    },
+    {
+     "ok": true,
+     "what": "harness observed the retrieval in state 'running'",
+     "detail": {
+      "observations": 31
+     }
+    },
+    {
+     "ok": true,
+     "what": "no page errors or console errors",
+     "detail": {
+      "errors": []
+     }
+    },
+    {
+     "ok": true,
+     "what": "every browser request went to the loopback client origin"
+    }
+   ],
+   "measurements": {
+    "track": {
+     "index": 8,
+     "id": "t08",
+     "title": "Silver Fields",
+     "duration_s": 12.9
+    },
+    "clock": {
+     "page_minus_python_s": 8.869171142578125e-05,
+     "uncertainty_s": 0.00025725364685058594
+    },
+    "job_id": "NbPF-f6_71qt",
+    "first_block_s": 0.04134036798495799,
+    "finished_s": 0.19583491794764996,
+    "playback": {
+     "startup_s": 0.27619999992847444,
+     "stalls": 0,
+     "stall_s": 0,
+     "ended": false,
+     "position_s": 1.934888,
+     "events": [
+      [
+       "playing",
+       0.276,
+       0
+      ]
+     ]
+    },
+    "result_timings_ms": {
+     "query_gen_ms": 20.35,
+     "query_upload_ms": 16.35,
+     "first_block_ms": 41.12,
+     "total_ms": 195.49,
+     "client_decode_ms": 100.29,
+     "server_prepare_ms": 15.17
+    },
+    "result_bytes": {
+     "query_body": 464569,
+     "response_bodies": 3524509,
+     "wire_tx": 466272,
+     "wire_rx": 3527641,
+     "blocks": 76,
+     "pcm": 412800,
+     "session_setup_body": 0
+    },
+    "server_compute_ms": 142.81,
+    "harness": {
+     "click_to_src_set_s": 0.27180000007152555,
+     "src_set_to_playing_s": 0.004799999952316284,
+     "click_to_playing_s": 0.2766000000238419,
+     "completion_window_epoch": [
+      1795388776.649181,
+      1795388776.6524308
+     ],
+     "src_set_epoch": 1795388776.7242,
+     "src_set_after_completion_s": [
+      0.07176923751831055,
+      0.07501912117004395
+     ],
+     "harness_last_running_poll_sent_epoch": 1795388776.6371803,
+     "harness_first_complete_poll_received_epoch": 1795388776.679738,
+     "poll_observations": 31
+    },
+    "src_mutations": [
+     {
+      "t": 400.8000000715256,
+      "n": 1,
+      "set": true,
+      "progress": "concluída · 76 blocos em 0,20 s · 25 deles são preenchimento, que esconde a duração da faixa"
+     }
+    ]
+   },
+   "notes": [],
+   "started_utc": "2026-11-22T23:06:16.297Z",
+   "finished_utc": "2026-11-22T23:06:19.794Z",
+   "duration_s": 3.497
+  },
+  {
+   "id": "T6b",
+   "name": "wire_schedule_track_independent",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "/api/wire holds at least two complete retrievals (T2 and T4 tracks)",
+     "detail": {
+      "retrievals": 2
+     }
+    },
+    {
+     "ok": true,
+     "what": "the PIR server saw the same request sequence for two different tracks",
+     "detail": {
+      "tracks": [
+       2,
+       8
+      ],
+      "first": [
+       "GET /v1/pir/queries/<q>/blocks?start=0&count=1",
+       "GET /v1/pir/queries/<q>/blocks?start=1&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=9&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=17&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=25&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=33&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=41&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=49&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=57&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=65&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=73&count=3",
+       "DELETE /v1/pir/queries/<q>"
+      ],
+      "second": [
+       "GET /v1/pir/queries/<q>/blocks?start=0&count=1",
+       "GET /v1/pir/queries/<q>/blocks?start=1&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=9&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=17&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=25&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=33&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=41&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=49&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=57&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=65&count=8",
+       "GET /v1/pir/queries/<q>/blocks?start=73&count=3",
+       "DELETE /v1/pir/queries/<q>"
+      ]
+     }
+    }
+   ],
+   "measurements": {
+    "sequence": [
+     "GET /v1/pir/queries/<q>/blocks?start=0&count=1",
+     "GET /v1/pir/queries/<q>/blocks?start=1&count=8",
+     "GET /v1/pir/queries/<q>/blocks?start=9&count=8",
+     "GET /v1/pir/queries/<q>/blocks?start=17&count=8",
+     "GET /v1/pir/queries/<q>/blocks?start=25&count=8",
+     "GET /v1/pir/queries/<q>/blocks?start=33&count=8",
+     "GET /v1/pir/queries/<q>/blocks?start=41&count=8",
+     "GET /v1/pir/queries/<q>/blocks?start=49&count=8",
+     "GET /v1/pir/queries/<q>/blocks?start=57&count=8",
+     "GET /v1/pir/queries/<q>/blocks?start=65&count=8",
+     "GET /v1/pir/queries/<q>/blocks?start=73&count=3",
+     "DELETE /v1/pir/queries/<q>"
+    ],
+    "query_upload_bytes": [
+     464525,
+     464569
+    ],
+    "tracks": [
+     2,
+     8
+    ]
+   },
+   "notes": [
+    "Request/response byte counts vary slightly between queries (compressed ciphertexts); the sequence of methods, paths and block ranges is identical."
+   ],
+   "started_utc": "2026-11-22T23:06:19.794Z",
+   "finished_utc": "2026-11-22T23:06:19.796Z",
+   "duration_s": 0.001
+  },
+  {
+   "id": "T5",
+   "name": "cancel",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "catalog rendered"
+    },
+    {
+     "ok": true,
+     "what": "POST /api/play accepted",
+     "detail": {
+      "status": 201
+     }
+    },
+    {
+     "ok": true,
+     "what": "retrieval was running when #btn-cancel was clicked",
+     "detail": {
+      "attempts": [
+       {
+        "track": 6,
+        "job": "h8rqimtAOIv5",
+        "state_before_click": "running",
+        "blocks_before_click": 32,
+        "blocks_total": 753,
+        "audio_s_available_before_click": 8.192
+       }
+      ]
+     }
+    },
+    {
+     "ok": true,
+     "what": "job state became 'cancelled'",
+     "detail": {
+      "state": "cancelled"
+     }
+    },
+    {
+     "ok": true,
+     "what": "retrieval stopped before the end",
+     "detail": {
+      "blocks": [
+       57,
+       753
+      ],
+      "pcm": [
+       466944,
+       6166400
+      ]
+     }
+    },
+    {
+     "ok": true,
+     "what": "UI progress line shows 'cancelada'",
+     "detail": {
+      "progress": "cancelada · 57 de 753 blocos recebidos"
+     }
+    },
+    {
+     "ok": true,
+     "what": "#btn-cancel is disabled after the cancellation"
+    },
+    {
+     "ok": true,
+     "what": "client result reports fewer blocks than the padded catalog",
+     "detail": {
+      "result_blocks": 57
+     }
+    },
+    {
+     "ok": true,
+     "what": "no page errors or console errors (besides the truncated-stream error, see X3)",
+     "detail": {
+      "errors": []
+     }
+    },
+    {
+     "ok": true,
+     "what": "every browser request went to the loopback client origin"
+    }
+   ],
+   "measurements": {
+    "catalog": "full",
+    "attempts": [
+     {
+      "track": 6,
+      "job": "h8rqimtAOIv5",
+      "state_before_click": "running",
+      "blocks_before_click": 32,
+      "blocks_total": 753,
+      "audio_s_available_before_click": 8.192
+     }
+    ],
+    "job_id": "h8rqimtAOIv5",
+    "track_index": 6,
+    "cancel_click_to_ui_cancelled_s": 0.3126392364501953,
+    "blocks_done": 57,
+    "blocks_total": 753,
+    "audio_s_available": 14.592,
+    "audio_s_total": 192.7,
+    "first_block_s": 0.043001445941627026,
+    "result_timings_ms": {
+     "query_gen_ms": 20.99,
+     "query_upload_ms": 16.93,
+     "first_block_ms": 42.76,
+     "total_ms": 165.47,
+     "client_decode_ms": 76.43,
+     "server_prepare_ms": 14.96
+    },
+    "result_bytes": {
+     "query_body": 464812,
+     "response_bodies": 2643107,
+     "wire_tx": 466128,
+     "wire_rx": 2645512,
+     "blocks": 57,
+     "pcm": 466944,
+     "session_setup_body": 0
+    },
+    "ui_state": {
+     "progress": "cancelada · 57 de 753 blocos recebidos",
+     "now": "Lunar EnginesPMR synthetic generatorreprodução progressiva · 3:12 · licença CC0-1.0",
+     "mode": "progressive",
+     "cancelDisabled": true,
+     "toggleDisabled": false,
+     "toggleLabel": "Pausar",
+     "playState": "Tocando."
+    },
+    "audio_state_at_cancel": {
+     "src": "/api/jobs/<redacted>/audio.wav?t=<redacted>",
+     "currentTime": 0.256742,
+     "duration": 192.7,
+     "paused": false,
+     "ended": false,
+     "readyState": 4,
+     "networkState": 2,
+     "playbackRate": 1,
+     "error": null,
+     "buffered": [
+      [
+       0,
+       14.593
+      ]
+     ]
+    },
+    "screenshot": "logs/browser/ui_after_cancel.png"
+   },
+   "notes": [],
+   "started_utc": "2026-11-22T23:06:19.796Z",
+   "finished_utc": "2026-11-22T23:06:20.490Z",
+   "duration_s": 0.694
+  },
+  {
+   "id": "T8",
+   "name": "ui_states_and_layout",
+   "required": true,
+   "status": "pass",
+   "checks": [
+    {
+     "ok": true,
+     "what": "without the token, the player shows an access error",
+     "detail": {
+      "banner": "Acesso negado: abra o endereço completo impresso pelo cliente no terminal; ele inclui o código de acesso desta execução."
+     }
+    },
+    {
+     "ok": true,
+     "what": "the catalog shows the error and no tracks",
+     "detail": {
+      "state": {
+       "cls": "muted error",
+       "rows": 0
+      }
+     }
+    },
+    {
+     "ok": true,
+     "what": "header navigation switches between 'Como funciona' and 'Ouvir'"
+    },
+    {
+     "ok": true,
+     "what": "no horizontal overflow at 390 px (landing and player)",
+     "detail": {
+      "landing": 0,
+      "player": 0
+     }
+    },
+    {
+     "ok": true,
+     "what": "the track buttons are visible at 390 px"
+    },
+    {
+     "ok": true,
+     "what": "keyboard focus is visible (solid outline)",
+     "detail": {
+      "focused": "|solid"
+     }
+    },
+    {
+     "ok": true,
+     "what": "no page errors or console errors on the small screen",
+     "detail": {
+      "errors": []
+     }
+    }
+   ],
+   "measurements": {
+    "small_screen_screenshot": "logs/browser/ui_small_screen.png"
+   },
+   "notes": [],
+   "started_utc": "2026-11-22T23:06:20.490Z",
+   "finished_utc": "2026-11-22T23:06:20.907Z",
+   "duration_s": 0.418
+  }
+ ],
+ "extra_probes": [
+  {
+   "id": "X3",
+   "name": "playback_after_cancel",
+   "required": false,
+   "status": "not_reproduced",
+   "checks": [],
+   "measurements": {
+    "audio_s_available": 14.592,
+    "playbackRate_set_to": 16,
+    "final_audio_state": {
+     "src": null,
+     "currentTime": 0,
+     "duration": null,
+     "paused": true,
+     "ended": false,
+     "readyState": 0,
+     "networkState": 0,
+     "playbackRate": 1,
+     "error": null,
+     "buffered": []
+    },
+    "ui_state": {
+     "progress": "cancelada · 57 de 753 blocos recebidos",
+     "now": "Lunar EnginesPMR synthetic generatorreprodução progressiva · 3:12 · licença CC0-1.0",
+     "mode": "progressive",
+     "cancelDisabled": true,
+     "toggleDisabled": true,
+     "toggleLabel": "Tocar",
+     "playState": "Reprodução encerrada: a recuperação foi interrompida antes do fim."
+    },
+    "media_events_after_cancel_click": [
+     {
+      "ev": "suspend",
+      "t": 617.2999999523163,
+      "ct": 0.29195,
+      "rs": 4,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "ratechange",
+      "t": 1087.2000000476837,
+      "ct": 0.864,
+      "rs": 4,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "waiting",
+      "t": 1093.7000000476837,
+      "ct": 0.864,
+      "rs": 2,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "canplay",
+      "t": 1093.7000000476837,
+      "ct": 0.864,
+      "rs": 4,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "playing",
+      "t": 1094,
+      "ct": 0.864,
+      "rs": 4,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "canplaythrough",
+      "t": 1094,
+      "ct": 0.864,
+      "rs": 4,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "waiting",
+      "t": 1125.6000000238419,
+      "ct": 1.027188,
+      "rs": 2,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "canplay",
+      "t": 1126.3999999761581,
+      "ct": 1.027188,
+      "rs": 4,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "playing",
+      "t": 1126.5,
+      "ct": 1.027188,
+      "rs": 4,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "canplaythrough",
+      "t": 1126.5,
+      "ct": 1.027188,
+      "rs": 4,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "waiting",
+      "t": 1957.7000000476837,
+      "ct": 12.851921,
+      "rs": 2,
+      "ns": 1,
+      "err": null
+     },
+     {
+      "ev": "abort",
+      "t": 3576.899999976158,
+      "ct": 0,
+      "rs": 0,
+      "ns": 3,
+      "err": null
+     },
+     {
+      "ev": "emptied",
+      "t": 3576.899999976158,
+      "ct": 0,
+      "rs": 0,
+      "ns": 3,
+      "err": null
+     },
+     {
+      "ev": "ratechange",
+      "t": 3577,
+      "ct": 0,
+      "rs": 0,
+      "ns": 3,
+      "err": null
+     }
+    ],
+    "audio_wav_requests": 2,
+    "observation_window_s": 2.5,
+    "settle_before_window_s": 3.0,
+    "audio_wav_requests_in_window": 0,
+    "ui_status_polls_in_window": 0,
+    "audio_wav_ranges": [
+     "bytes=0-",
+     "bytes=466988-"
+    ],
+    "content_length_mismatch_failures": 1,
+    "reached_terminal_media_state": true,
+    "ui_playback_report": {
+     "startup_s": 0.11279999995231628,
+     "stalls": 3,
+     "stall_s": 0.0007999999523162771,
+     "ended": true,
+     "position_s": 0,
+     "events": [
+      [
+       "playing",
+       0.113,
+       0
+      ],
+      [
+       "waiting",
+       0.946,
+       0.864
+      ],
+      [
+       "playing",
+       0.946,
+       0.864
+      ],
+      [
+       "waiting",
+       0.977,
+       1.027
+      ],
+      [
+       "playing",
+       0.978,
+       1.027
+      ],
+      [
+       "waiting",
+       1.809,
+       12.852
+      ],
+      [
+       "truncated",
+       3.426,
+       16.383
+      ]
+     ]
+    }
+   },
+   "notes": [
+    "After a cancel the WAV header and the 206 Content-Length still announce the whole track. When playback reaches the end of the decrypted audio, the client closes each Range request without data; Chromium logs ERR_CONTENT_LENGTH_MISMATCH, retries the Range request, and the element stays in 'waiting' (no 'ended'/'error'), so the UI keeps polling and posting playback forever."
+   ],
+   "started_utc": "2026-11-22T23:06:20.907Z",
+   "finished_utc": "2026-11-22T23:06:28.544Z",
+   "duration_s": 7.637
+  },
+  {
+   "id": "X1",
+   "name": "cancel_before_first_block",
+   "required": false,
+   "status": "not_reproduced",
+   "checks": [],
+   "measurements": {
+    "job_id": "Gs2gUQt6Qy9O",
+    "server_state": "cancelled",
+    "blocks_done": 0,
+    "first_block_s": null,
+    "raw_status_contains_NaN": false,
+    "raw_status_excerpt": "\"timings_ms\":{\"query_gen_ms\":20.47,\"query_upload_ms\":16.1,\"first_block_ms\":null,\"total_ms\":37.21,\"client_decode_ms\":0.0,\"server_prepare_ms\":14.71},\"bytes\":{\"que",
+    "browser_json_parse": {
+     "ok": true,
+     "nan": false
+    },
+    "ui_after_4s": {
+     "progress": "cancelada · 0 de 753 blocos recebidos",
+     "now": "Wandering BridgesPMR synthetic generatorreprodução progressiva · 3:02 · licença CC0-1.0",
+     "mode": "progressive",
+     "cancelDisabled": true,
+     "toggleDisabled": true,
+     "toggleLabel": "Tocar",
+     "playState": "Reprodução encerrada: a recuperação foi interrompida antes do fim."
+    },
+    "ui_job_status_requests": 4,
+    "auto_cancel": {
+     "armed": false,
+     "t": 149.20000004768372
+    }
+   },
+   "notes": [
+    "Cancelling before the first block is decrypted makes RetrievalResult.timings['first_block_ms'] = NaN (pirclient.py); json.dumps emits the bare token NaN, which the browser's JSON.parse rejects, so every UI poll of /api/jobs/<id> fails and the page never shows 'cancelada'."
+   ],
+   "started_utc": "2026-11-22T23:06:28.544Z",
+   "finished_utc": "2026-11-22T23:06:32.926Z",
+   "duration_s": 4.382
+  },
+  {
+   "id": "X2",
+   "name": "autoplay_without_flag",
+   "required": false,
+   "status": "observed",
+   "checks": [],
+   "measurements": {
+    "launch_args": [
+     "--disable-audio-output",
+     "--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1"
+    ],
+    "no_activation_play": {
+     "result": "NotAllowedError",
+     "userActivationBefore": {
+      "isActive": false,
+      "hasBeenActive": false
+     }
+    },
+    "progressive": {
+     "played": true,
+     "click_to_playing_s": 0.13340000009536743,
+     "events": [
+      "emptied",
+      "play",
+      "waiting",
+      "loadstart",
+      "durationchange",
+      "loadedmetadata",
+      "loadeddata",
+      "canplay",
+      "playing",
+      "canplaythrough",
+      "suspend"
+     ],
+     "console": []
+    },
+    "complete": {
+     "played": true,
+     "click_to_playing_s": 0.27719999992847444,
+     "events": [
+      "emptied",
+      "play",
+      "waiting",
+      "loadstart",
+      "suspend",
+      "durationchange",
+      "loadedmetadata",
+      "loadeddata",
+      "canplay",
+      "playing",
+      "canplaythrough"
+     ],
+     "console": []
+    }
+   },
+   "notes": [
+    "(a) shows whether the headless shell enforces the default autoplay policy; (b)/(c) show whether the UI's play() calls succeed without the flag once the page has the user activation of the click."
+   ],
+   "started_utc": "2026-11-22T23:06:32.926Z",
+   "finished_utc": "2026-11-22T23:06:37.940Z",
+   "duration_s": 5.013
+  }
+ ],
+ "summary": {
+  "required_passed": 9,
+  "required_total": 9,
+  "required_failed": [],
+  "extra_probes": {
+   "X3": "not_reproduced",
+   "X1": "not_reproduced",
+   "X2": "observed"
+  },
+  "overall": "pass"
+ },
+ "page_log_entries": 6
+}

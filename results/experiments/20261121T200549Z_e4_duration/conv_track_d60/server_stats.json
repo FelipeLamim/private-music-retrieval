@@ -1,0 +1,64 @@
+{
+ "experiment": {
+  "tracks": [
+   0,
+   9
+  ],
+  "warmup": 1,
+  "trials": 3,
+  "client": {
+   "batch": 8,
+   "first_batch": 1,
+   "prefetch": 2,
+   "policy": "pad"
+  },
+  "name": "conv_track_d60",
+  "catalog": {
+   "generate": {
+    "name": "n10_d60",
+    "profile": "full",
+    "n_tracks": 10,
+    "duration_s": 60
+   }
+  },
+  "kind": "conventional",
+  "client_kind": "conv_track"
+ },
+ "catalog_dir": "data/catalog/generated/n10_d60",
+ "server_ready": {
+  "listen": {
+   "host": "127.0.0.1",
+   "port": 45251,
+   "pid": 13574
+  },
+  "setup_s": 0.02245333103928715
+ },
+ "server_ready_wall_s": 0.4574730780441314,
+ "client_wall_s": 0.22224930196534842,
+ "client_returncode": 0,
+ "server_proc_before": {
+  "proc": {
+   "VmHWM": 105100,
+   "VmRSS": 105100,
+   "utime_s": 0.19,
+   "stime_s": 0.18,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_proc_after": {
+  "proc": {
+   "VmHWM": 105316,
+   "VmRSS": 105316,
+   "utime_s": 0.2,
+   "stime_s": 0.19,
+   "children_cutime_s": 0.0
+  },
+  "children": {}
+ },
+ "server_app_stats": {
+  "pid": 13574,
+  "cpu_s": 0.395512212,
+  "access_log_entries": 7
+ }
+}
